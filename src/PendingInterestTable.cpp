@@ -1,5 +1,6 @@
 #include"../header/PendingInterestTable.h"
 #include"../header/global.h"
+#include<algorithm>
 
 PendingInterestTable::PendingInterestTable() : capacity(PIT_DEFAULT_CAPACITY)
 {
@@ -30,9 +31,15 @@ set<Interface> PendingInterestTable::getInterfaces(ContentName name)
 	return set<Interface>() ;
 }
 
+bool PendingInterestTable::isExist(ContentName name , Interface interface) const
+{
+	auto it = pit.find(name) ;
+	return it != pit.cend() && it->second.find(interface) != it->second.end() ;
+}
+
 bool PendingInterestTable::isExist(ContentName name) const
 {
-	return (pit.count(name) == 1) ;
+	return pit.find(name) != pit.cend() ;
 }
 
 void PendingInterestTable::remove(ContentName name)
@@ -43,7 +50,7 @@ void PendingInterestTable::remove(ContentName name)
 //由哪个接口转发要由调用者(所属节点)决定.
 bool PendingInterestTable::add(ContentName name , Interface interface)
 {
-	if(!isExist(name) && capacity == pit.size())
+	if(!isExist(name , interface) && capacity == pit.size())
 	{
 		return false ;
 	}

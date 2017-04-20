@@ -20,18 +20,17 @@
 #include"../header/DataPacket.h"
 #include"../header/Interface.h"
 #include"../header/PendingInterestTable.h"
-#include"../header/ForwardingInterestBase.h"
 #include"../header/Node.h"
 
 using namespace std ;
 
 const string NODES_DEF_FILE("./source/node-define/nodes") ;
-const string LINK_FILE("./source/link") ;
 const int INFINITY = 1000 ;//INFINITY表示节点间的距离为无穷大.
 
+static string LINK_FILE ;
 static int NODE_NUM ;
 static set<string> nodes ;
-static vector<Node> node_list ;
+static vector<Node*> node_list ;
 //为简单起见，规定node_list[i] 节点对应node_links中的 i 节点,node_links[i][j] == 1表示节点i与j相连。特此规定!!!!!!
 static vector<vector<int> > node_links ;
 
@@ -42,35 +41,51 @@ void init() ;
 string read_property(ifstream& , map<string , unsigned>&) ;
 string read_data(ifstream& , Node*) ;
 string read_operation(ifstream& , Node*) ;
-void init_log(vector<Node>&) ;
+void init_log(vector<Node*>&) ;
 
 void print() ;
 
-int main()
+int main(int argc , char *argv[])//./cache topology(CERNET2/Deltacom/GtsCe/Oteglobe) cache-strategy("PPDS LRU no-cache")
 {
-// 	cout<<ContentName("a/ai").getStrName()<<endl ;
+
+	if(argc != 3)
+	{
+		cout<<"main:para error"<<endl ;
+		return 0 ;
+	}
 	
+	LINK_FILE = argv[1] ;
+	if(LINK_FILE != "CERNET2" && LINK_FILE != "Deltacom" && LINK_FILE != "GtsCe" && LINK_FILE != "Oteglobe")
+	{
+		cout<<"main:para 2(topology) wrong. only CERNET2/Deltacom/GtsCe/Oteglobe is supported"<<endl ;
+		return 0 ;
+	}
+	LINK_FILE = "./source/link/" + LINK_FILE + ".topology" ;
+
+	cache_strategy = argv[2] ;
+	if(cache_strategy != "PPDS" && cache_strategy != "LRU" && cache_strategy != "no-cache")
+	{
+		cout<<"main:para 3(cache strategy) wrong. only PPDS/LRU/no-cache is supported"<<endl ;
+		return 0 ;
+	}
+
 	init() ;
 	bool has_work = true ;
 	while(has_work)
 	{
 		++global_clock ;
 		has_work = false ;
-		for(vector<Node>::iterator it = node_list.begin() ; it != node_list.end() ; ++it)
+		for(vector<Node*>::iterator it = node_list.begin() ; it != node_list.end() ; ++it)
 		{
-			if(it->hasWork())
+			if((*it)->hasWork())
 			{
 				has_work = true ;
-				it->work() ;
+				(*it)->work() ;
 			}
 		}
 	}
 	log("end at " + int_to_str(global_clock)) ;
-	cout<<"------------------program stopped---------------"<<endl ;
-	cout<<"------------------program stopped---------------"<<endl ;
-	cout<<"------------------program stopped---------------"<<endl ;
-	cout<<"------------------program stopped---------------"<<endl ;
-	cout<<"------------------program stopped---------------"<<endl ;
+	//cout<<"------------------program stopped---------------"<<endl ;
 	return 0 ;
 }
 
@@ -121,23 +136,25 @@ void init()
 			cout<<"ERROR:"<<*it<<" define file cannot find [data] tag"<<endl ;
 			exit(1) ;
 		}
-		// Node *node = new Node(*it , cap_list) ;
-		node_list.push_back(Node(*it , cap_list)) ;
-		if(read_data(node_file , &node_list[node_list.size()-1]) != "[operation]")
+		Node *node = new Node(*it , cap_list) ;
+		node_list.push_back(node) ;
+		if(read_data(node_file , node_list[node_list.size()-1]) != "[operation]")
 		{
 			cout<<"ERROR:"<<*it<<" define file cannot find [operation] tag"<<endl ;
 			exit(1) ;
 		}
-		read_operation(node_file , &node_list[node_list.size()-1]) ;
-		cout<<"node "<<(*it)<<" initialized, "<<node_list.rbegin()->data_table.size()<<" content, "<<node_list.rbegin()->get_task_queue.size()<<" task"<<endl ;
+		read_operation(node_file , node_list[node_list.size()-1]) ;
+		//cout<<"node "<<(*it)<<" initialized, "<<node_list.rbegin()->data_table.size()<<" content, "<<node_list.rbegin()->get_task_queue.size()<<" task"<<endl ;
 		node_file.close() ;
 	}//for(set<string>::iterator it = nodes.begin() ; it != nodes.end() ; ++it)
 	//节点基本属性初始化完成
 
-	for(vector<Node>::iterator it = node_list.begin() ; it != node_list.end() ; ++it)
+	for(vector<Node*>::iterator it = node_list.begin() ; it != node_list.end() ; ++it)
 	{
-		it->init() ;
+		(*it)->init() ;
 	}
+
+	//cout<<node_list.size()<<" nodes initialized"<<endl ;
 
 	//根据 ./source/link 文件初始化节点的连接状况.
 	ifstream link_file(LINK_FILE) ;
@@ -153,11 +170,11 @@ void init()
 		size_t it_a(node_list.size()) , it_b(node_list.size()) ;
 		for(size_t it(0) ; it != node_list.size() ; ++it)
 		{
-			if(node_list[it].name == node_a)
+			if(node_list[it]->name == node_a)
 			{
 				it_a = it ;
 			}
-			else if(node_list[it].name == node_b)
+			else if(node_list[it]->name == node_b)
 			{
 				it_b = it ;
 			}
@@ -166,14 +183,14 @@ void init()
 		{
 			throw runtime_error("ERROR:file " + LINK_FILE + ", line " + int_to_str(line) + ":cannot find the  node\n") ;
 		}
-		if(!node_list[it_a].buildLink(&node_list[it_b]))//建立连接，检查连接是否失败
+		if(!node_list[it_a]->buildLink(node_list[it_b]))//建立连接，检查连接是否失败
 		{
-			node_list[it_a].closeLink(&node_list[it_b]) ;
+			node_list[it_a]->closeLink(node_list[it_b]) ;
 			throw runtime_error("ERROR:file " + LINK_FILE + ", line " + int_to_str(line) + ":link failed\n") ;
 		}
-		if(!node_list[it_b].buildLink(&node_list[it_a]))//建立连接，检查连接是否失败
+		if(!node_list[it_b]->buildLink(node_list[it_a]))//建立连接，检查连接是否失败
 		{
-			node_list[it_b].closeLink(&node_list[it_a]) ;
+			node_list[it_b]->closeLink(node_list[it_a]) ;
 			throw runtime_error("ERROR:file " + LINK_FILE + ", line " + int_to_str(line) + ":link failed\n") ;
 		}
 		if(node_links[it_a][it_b] == 1 || node_links[it_a][it_b] == 1)
@@ -181,7 +198,7 @@ void init()
 			throw runtime_error("ERROR:file " + LINK_FILE + ", line " + int_to_str(line) + ":the link exists in node_links\n") ;
 		}
  		node_links[it_a][it_b] = node_links[it_b][it_a] = 1 ;
-		cout<<"read link: "<<node_a<<"<--->"<<node_b<<"."<<endl ;
+		//cout<<"read link: "<<node_a<<"<--->"<<node_b<<"."<<endl ;
 	}//for(string str ; getline(link_file , str) ; ++line)
 	for(size_t it(0) ; it != node_links.size() ; ++it)
 	{
@@ -227,19 +244,19 @@ void init()
 				}
 				if((*dist)[i][j] >= INFINITY)
 				{
-					throw runtime_error(node_list[i].getName() + " to " + node_list[j].getName() +
-					" is infinity.\n") ;
+					//cout<<node_list[i].getName() + " to " + node_list[j].getName() + " is infinity.\n" ;
+					continue ;
 				}
 				if(path[i][j] >= NODE_NUM)
 				{
-					throw runtime_error("path from " + node_list[i].getName() + " to " + node_list[j].getName() +
+					throw runtime_error("path from " + node_list[i]->getName() + " to " + node_list[j]->getName() +
 					" is illegal.\n") ;
 				}
-				if(node_list[i].isLinked(&node_list[path[i][j]]) == false)
+				if(node_list[i]->isLinked(node_list[path[i][j]]) == false)
 				{
-					throw runtime_error(node_list[i].getName() + " to " + node_list[j].getName() + 
-					" through " + node_list[path[i][j]].getName() + " while " + node_list[i].getName() + 
-					" to " + node_list[path[i][j]].getName() + " is infinity.\n") ;
+					throw runtime_error(node_list[i]->getName() + " to " + node_list[j]->getName() + 
+					" through " + node_list[path[i][j]]->getName() + " while " + node_list[i]->getName() + 
+					" to " + node_list[path[i][j]]->getName() + " is infinity.\n") ;
 				}
 				// Interface *interface = node_list[i].getLinkInterface(&node_list[j]) ;
 				Interface *interface ;
@@ -248,10 +265,10 @@ void init()
 // 				{
 // 					k = path[i][k] ;
 // 				}
-				interface = node_list[i].getLinkInterface(&node_list[path[i][j]]) ;
-				for(map<ContentName,unsigned>::iterator it = node_list[j].data_table.begin() ; it != node_list[j].data_table.end() ; ++it)
+				interface = node_list[i]->getLinkInterface(node_list[path[i][j]]) ;
+				for(map<ContentName,unsigned>::iterator it = node_list[j]->data_table.begin() ; it != node_list[j]->data_table.end() ; ++it)
 				{
-					node_list[i].routing_table.add(it->first , interface) ;
+					node_list[i]->routing_table.add(it->first , interface) ;
 				}
 			}
 		}
@@ -302,18 +319,18 @@ string read_operation(ifstream& file , Node* node)
 	return "" ;
 }
 
-void init_log(vector<Node>& node)
+void init_log(vector<Node*>& node)
 {
-	for(vector<Node>::iterator it = node.begin() ; it != node.end() ; ++it)
+	for(vector<Node*>::iterator it = node.begin() ; it != node.end() ; ++it)
 	{
-		log(it->getName() , "CSCapacity " + int_to_str(it->getCSCapacity())) ;
+		log((*it)->getName() , "CSCapacity " + int_to_str((*it)->getCSCapacity())) ;
 	}
 }
 
 void print()
 {
-	for(vector<Node>::iterator it = node_list.begin() ; it != node_list.end() ; ++it)
+	for(vector<Node*>::iterator it = node_list.begin() ; it != node_list.end() ; ++it)
 	{
-		cout<<it->name<<" "<<it->get_task_record.size()<<endl ;
+		cout<<(*it)->name<<" "<<(*it)->get_task_record.size()<<endl ;
 	}
 }

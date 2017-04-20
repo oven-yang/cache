@@ -16,7 +16,7 @@ timer update_circle = 100 ;//缓存更新周期
 double pref_weight = 0.4 ;
 double popu_weight = 0.5 ;
 double old_weight = 0.8 ;
-
+string cache_strategy("not-defined") ;
 
 //functions
 string int_to_str(unsigned num)

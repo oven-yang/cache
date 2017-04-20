@@ -8,7 +8,6 @@
 #include"ContentName.h"
 #include"ContentStore.h"
 #include"PendingInterestTable.h"
-#include"ForwardingInterestBase.h"
 #include"PopularityTable.h"
 #include"PreferenceTable.h"
 #include"RoutingTable.h"
@@ -69,7 +68,6 @@ private :
 	unsigned capacity ;
 
 	PendingInterestTable pit ;
-	ForwardingInterestBase fib ;
 	ContentStore cs ;
 
 	list<ContentName> cs_abstract ;
@@ -79,8 +77,8 @@ private :
 	PreferenceTable preference_table ;
 	
 	queue<TaskType> task_queue ;
-    queue<DataPacket > send_data_queue ;
-    queue<InterestPacket> send_interest_queue ;
+    queue<pair<DataPacket , set<Interface> > > send_data_queue ;
+    queue<pair<InterestPacket , Interface> > send_interest_queue ;
     queue<pair<DataPacket , Node*> > receive_data_queue ;
     queue<pair<InterestPacket , Node*> > receive_interest_queue ;
 
@@ -100,16 +98,12 @@ public :
 	void init() ;
 
 	bool setPITCapacity(unsigned new_capacirt){ return pit.setCapacity(new_capacirt) ; }
-	bool setFIBCapacity(unsigned new_capacity){ return fib.setCapacity(new_capacity) ; }
-	bool setCSCapacity(unsigned new_capacity){ return fib.setCapacity(new_capacity) ; }
 	bool setPrefCapacity(unsigned new_capacity){ return preference_table.setCapacity(new_capacity) ; }
 	bool setPopuCapacity(unsigned new_capacity){ return popularity_table.setCapacity(new_capacity) ; }
 	void rename(string new_name){ name = new_name ; }
 	string getName() const { return name ; }
-	unsigned getFIBCapacity(){ return fib.getCapacity() ; }
 	unsigned getPITCapacity(){ return pit.getCapacity() ; }
 	unsigned getCSCapacity(){ return cs.getCapacity() ; }
-	unsigned getFIBDataSize(){ return fib.getItemQuantity() ; }
 	unsigned getPITDataSize(){ return pit.getItemQuantity() ; }
 	unsigned getCSDataSize(){ return cs.getDataSize() ; }
 	unsigned getGetTaskNum(){ return get_task_queue.size() ; }
@@ -128,14 +122,14 @@ public :
 	bool buildLink(Node *neighbour) ;
 	void closeLink(Node *neighbour) ;
 
-	void addTask(DataPacket data_packet) ;
-    void addTask(InterestPacket interest_packet) ;
+	void addTask(DataPacket data_packet , set<Interface> interfaces) ;
+    void addTask(InterestPacket interest_packet , Interface interface) ;
     void addTask(DataPacket data_packet , Node* neighbour) ;
     void addTask(InterestPacket interest_packet , Node* neighbour) ;
     void executeTask() ;
 
 	bool sendPacket(DataPacket data_packet , set<Interface> interfaces) ;
-	bool sendPacket(InterestPacket interest_packet , set<Interface> interfaces) ;
+	bool sendPacket(InterestPacket interest_packet , Interface interface) ;
 	bool receivePacket(DataPacket data_packet ,  Node* sender) ;
 	bool receivePacket(InterestPacket interest_packet , Node* sender) ;
 

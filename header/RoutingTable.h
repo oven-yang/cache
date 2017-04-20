@@ -8,7 +8,7 @@ class RoutingTable
 {
 private :
     friend void init() ;
-    friend int main() ;
+    friend int main(int , char* []) ;
     void add(ContentName name , Interface *interface) ;
 	void clear(RoutingTableItem* p) ;
     RoutingTableItem root ;

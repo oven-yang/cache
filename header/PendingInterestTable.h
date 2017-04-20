@@ -25,6 +25,7 @@ public :
 	unsigned getCapacity() const { return capacity ; }
 	unsigned getItemQuantity() const { return pit.size() ; }
 	set<Interface> getInterfaces(ContentName name) ;
+	bool isExist(ContentName name , Interface interface) const ;
 	bool isExist(ContentName name) const ;
 	void remove(ContentName name) ;
 	bool add(ContentName name , Interface interface) ;

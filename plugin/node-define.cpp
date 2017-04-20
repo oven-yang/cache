@@ -8,6 +8,8 @@
 #include<limits>
 #include<cmath>
 #include<utility>
+#include<cstdlib>
+#include<ctime>
 
 using namespace std ;
 
@@ -29,11 +31,12 @@ public :
 	Name& operator++() ;
 } ;
 
-int main(int argc , char *argv[])
+int main(int argc , char *argv[])// ./node-define node-number operation-kind
 {
+	srand(time(0)) ;
 	if(argc != 3)
 	{
-		cout<<"parameters must be 3(program name,number of nodes,operation_kind_num)"<<endl ;
+		cout<<"parameters must be 3(program name,number of nodes,operation_kind_num)"<<endl ;//node-define 20 x
 		return 0 ;
 	}
 	int node_num = str_to_int(argv[1]) ;
@@ -67,10 +70,10 @@ int main(int argc , char *argv[])
 	{
 		node_file.open("./source/node" + to_string(i) , std::ios::out | std::ios::trunc) ;
 		node_file<<"[property]\n" ;
-		node_file<<"interface_quantity 7\n" ;
+		node_file<<"interface_quantity 20\n" ;
 		node_file<<"fib_capacity 1000\n" ;
 		node_file<<"pit_capacity 1000\n" ;
-		node_file<<"cs_capacity 500\n" ;
+		node_file<<"cs_capacity 180\n" ;
 		node_file<<"pref_capacity 1000\n" ;
 		node_file<<"popu_capacity 1000\n" ;
 		node_file<<"capacity "<<numeric_limits<unsigned int>::max()<<"\n" ;
@@ -101,37 +104,39 @@ int main(int argc , char *argv[])
 	{
 		node_file.open("./source/node" + to_string(i) , std::ios::out | std::ios::app) ;
 		node_file<<"[operation]\n" ;//timer content_name
-
-		vector<pair<string , int> > opt ;
-		for(size_t j = 0 ; j < OPERATION_KIND_NUM ; ++j)
+		node_file.close() ;
+	}
+	vector<pair<string , int> > opt ;
+	for(size_t j = 0 ; j < OPERATION_KIND_NUM ; ++j)
+	{
+		string str_name("") ;
+		while(str_name == "")
 		{
-			string str_name("") ;
-			while(str_name == "")
+			str_name = name.randName().toString() ;
+			for(vector<pair<string , int> >::iterator it = opt.begin() ; it != opt.end() ; ++it)
 			{
-				str_name = name.randName().toString() ;
-				for(vector<pair<string , int> >::iterator it = opt.begin() ; it != opt.end() ; ++it)
+				if(str_name == it->first)
 				{
-					if(str_name == it->first)
-					{
-						str_name = "" ;
-						break ;
-					}
+					str_name = "" ;
+					break ;
 				}
 			}
-			opt.push_back(make_pair(str_name , pow(2 , j))) ;
 		}
-		int j = 1 ;
-		for( ; opt.size() > 0 ; ++j)
+		opt.push_back(make_pair(str_name , pow(2 , j))) ;
+	}
+	vector<int> operation_timer(node_num + 1 , 0) ;
+	while(!opt.empty())
+	{
+		int write_node = rand()%node_num + 1 ;
+		++operation_timer[write_node] ;
+		node_file.open("./source/node" + to_string(write_node) , std::ios::out | std::ios::app) ;
+
+		size_t k = rand()%opt.size() ;
+		node_file<<operation_timer[write_node]<<" "<<opt[k].first<<"\n" ;
+		if(--opt[k].second == 0)
 		{
-			size_t k = rand()%opt.size() ;
-			node_file<<j<<" "<<opt[k].first<<"\n" ;
-			if(--opt[k].second == 0)
-			{
-				opt.erase(opt.begin()+k) ;
-			}
+			opt.erase(opt.begin()+k) ;
 		}
-		node_file<<j<<" "<<name.randName().toString() ;
-		
 		node_file.close() ;
 	}
 

@@ -62,5 +62,6 @@ extern timer update_circle ;//缓存更新周期
 extern double pref_weight ;
 extern double popu_weight ;
 extern double old_weight  ;
+extern string cache_strategy ;
 
 #endif

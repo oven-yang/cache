@@ -5,7 +5,7 @@
 // 默认0接口关闭，需要手动开启，并使其指向自身。
 Node::Node(const string name , map<string , unsigned> capacity_list) : 
 	name(name) , capacity(capacity_list["capacity"]) , 
-	pit(capacity_list["pit_capacity"]) , fib(capacity_list["fib_capacity"]) , 
+	pit(capacity_list["pit_capacity"]) , 
 	cs(capacity_list["cs_capacity"]) , data_size(0) , 
 	popularity_table(capacity_list["popu_capacity"]) , 
 	preference_table(capacity_list["pref_capacity"])
@@ -100,19 +100,19 @@ void Node::closeLink(Node *neighbour)//同上buildLink()
 }
 
 //将发送data packet的任务入队
-void Node::addTask(DataPacket data_packet)
+void Node::addTask(DataPacket data_packet , set<Interface> interfaces)
 {
     task_queue.push(SendData) ;
-    send_data_queue.push(data_packet) ;
+    send_data_queue.push(make_pair(data_packet , interfaces)) ;
 	// log(name , "node " + this->name + " add send_data task " + data_packet.getName().getStrName() + "->" + int_to_str(interface.getId())) ;
 }
 
 //将发送interest packet的任务入队
-void Node::addTask(InterestPacket interest_packet)
+void Node::addTask(InterestPacket interest_packet , Interface interface)
 {
 	// log(name , "node " + this->name + " is going to add send_interest task " + interest_packet.getName().getStrName()) ;
     task_queue.push(SendInterest) ;
-    send_interest_queue.push(interest_packet) ;
+    send_interest_queue.push(make_pair(interest_packet , interface)) ;
 	// log(name , "node " + this->name + " add send_interest task " + interest_packet.getName().getStrName()) ;
 }
 
@@ -154,24 +154,13 @@ void Node::executeTask()
 	{
 		case SendData :
 		{
-			set<Interface> interfaces ;
-			if(pit.isExist(send_data_queue.front().getName()))
-			{
-				interfaces = pit.getInterfaces(send_data_queue.front().getName()) ;
-				pit.remove(send_data_queue.front().getName()) ;
-			}
-			sendPacket(send_data_queue.front() , interfaces) ;
+			sendPacket(send_data_queue.front().first , send_data_queue.front().second) ;
 			send_data_queue.pop() ;
 			break ;
 		}
 		case SendInterest :
 		{
-			ContentName name = send_interest_queue.front().getName() ; 
-			if(fib.isExist(name))
-			{
-				sendPacket(send_interest_queue.front() , fib.getInterfaces(name)) ;
-				fib.remove(name) ;
-			}
+			sendPacket(send_interest_queue.front().first , send_interest_queue.front().second) ;
 			send_interest_queue.pop() ;
 			break ;
 		}
@@ -203,7 +192,8 @@ bool Node::sendPacket(DataPacket data_packet , set<Interface> interfaces)
 			map<ContentName , int>::iterator it = get_task_record.find(data_packet.getName()) ;
 			if(it == get_task_record.end())
 			{
-				log(this->name , "error:get task error " + data_packet.getName().getStrName()) ;
+				log(this->name , "error:get_task " + data_packet.getName().getStrName() + " not exist") ;
+				con = false ;
 			}
 			else
 			{
@@ -236,22 +226,19 @@ bool Node::sendPacket(DataPacket data_packet , set<Interface> interfaces)
 	return con ;
 }
 
-bool Node::sendPacket(InterestPacket interest_packet , set<Interface> interfaces)
+bool Node::sendPacket(InterestPacket interest_packet , Interface interface)
 {
 	bool con = true ;
-	for(set<Interface>::iterator interface = interfaces.begin() ; interface != interfaces.end() ; ++interface)
+	for(vector<pair<Interface , Node*> >::iterator it = interface_list.begin() ; it != interface_list.end() ; ++it)
 	{
-		for(vector<pair<Interface , Node*> >::iterator it = interface_list.begin() ; it != interface_list.end() ; ++it)
+		if(it->first == interface && it->first.getState() == linked && it->second != this)
 		{
-			if(it->first == *interface && it->first.getState() == linked && it->second != this)
-			{
-				it->second->addTask(interest_packet , this) ;
-				break ;
-			}
-			else
-			{
-				con = false ;
-			}
+			it->second->addTask(interest_packet , this) ;
+			break ;
+		}
+		else
+		{
+			con = false ;
 		}
 	}
 	return con ;
@@ -263,7 +250,7 @@ bool Node::receivePacket(DataPacket data_packet , Node* sender)
 	ContentName packet_name = data_packet.getName() ;
 	Interface interface(0) ;
 	for(vector<pair<Interface , Node*> >::iterator it = interface_list.begin() ;
-	it != interface_list.end() ; ++it)
+		it != interface_list.end() ; ++it)
 	{
 		if(*sender == *(it->second) && it->first.getState() == linked)
 		{
@@ -278,7 +265,8 @@ bool Node::receivePacket(DataPacket data_packet , Node* sender)
 	}
 	if(pit.isExist(packet_name))
 	{
-		addTask(data_packet) ;
+		addTask(data_packet , pit.getInterfaces(packet_name)) ;
+		pit.remove(packet_name) ;
 	}
 	if(data_table.count(packet_name) == 0)
 	{
@@ -304,42 +292,49 @@ bool Node::receivePacket(InterestPacket interest_packet , Node* sender)
 	{
 		return false ;
 	}
-	if(interface.getId() == 0)
+
+	if(cache_strategy == "PPDS")
 	{
-		preference_table.updateQuantity(interest_packet.getName()) ;
-	}
-	else
-	{
-		popularity_table.updateQuantity(interest_packet.getName()) ;
+		if(interface.getId() == 0)
+		{
+			preference_table.updateQuantity(interest_packet.getName()) ;
+		}
+		else
+		{
+			popularity_table.updateQuantity(interest_packet.getName()) ;
+		}
 	}
 
 	if(data_table.count(interest_packet.getName()))//节点本身存储了此内容
 	{
-		pit.add(interest_packet.getName() , interface) ;
-		addTask(DataPacket(interest_packet.getName() , data_table[interest_packet.getName()] , false)) ;
+		set<Interface> interfaces ;
+		interfaces.insert(interface) ;
+		addTask(DataPacket(interest_packet.getName() , data_table[interest_packet.getName()] , false) , interfaces) ;
 		return true ;
 	}
 	else if(cs.isExist(interest_packet.getName()))//CS中缓存了此内容
 	{
-		pit.add(interest_packet.getName() , interface) ;
-		addTask(cs.getDataPacket(interest_packet.getName())) ;
+		set<Interface> interfaces ;
+		interfaces.insert(interface) ;
+		addTask(cs.getDataPacket(interest_packet.getName()) , interfaces) ;
 		return true ;
 	}
 	else if(!pit.isExist(interest_packet.getName()))//PIT中不存在此请求
 	{
 		pit.add(interest_packet.getName() , interface) ;
-		if(!fib.isExist(interest_packet.getName()))
+		Interface* forward_interface = getForwardInterface(interest_packet.getName()) ;
+		if(forward_interface->getId() != 0)
 		{
-			addTask(interest_packet) ;
-			Interface *forward_interface = getForwardInterface(interest_packet.getName()) ;
-			if(forward_interface == 0)//无法确定此interest packet应该向哪个接口转发。
-			{
-				// throw runtime_error("routing error:node " + name + " receivePacket():get " + interest_packet.getName().getStrName()) ;
-				log(name , "routing error:cannot forword \"" + interest_packet.getName().getStrName() + "\"") ;
-				return false ;
-			}
-			fib.add(interest_packet.getName() , *forward_interface) ;
+			addTask(interest_packet , *forward_interface) ;
 		}
+		else
+		{
+			log(name , "routing error:cannot forword \"" + interest_packet.getName().getStrName() + "\"") ;
+		}
+	}
+	else if(!pit.isExist(interest_packet.getName() , interface))
+	{
+		pit.add(interest_packet.getName() , interface) ;
 	}
 	return true ;
 }
@@ -375,37 +370,76 @@ void Node::cache(DataPacket data)
 	/*
 	 * 当没有记录d此packet的基本缓存优先级时,设此优先级为0 
 	 */
-	double cache_priority = calculateCachePriority(getBasicCachePriority(data.getName()) , data.getSize()) ;
-	unsigned old_cs_data_size = cs.getDataSize() ;
-	string con = cs.add(data , cache_priority) ;
-	if(con == "replace")
+	if(cache_strategy == "PPDS")
 	{
-		// 记录 replace remove_data_size inserted_data_name nserted_data_size 
-		log(name , "replace " + int_to_str(old_cs_data_size - cs.getDataSize() + data.getSize()) + " " + data.getName().getStrName() + " " + int_to_str(data.getSize())) ;
+		double cache_priority = calculateCachePriority(getBasicCachePriority(data.getName()) , data.getSize()) ;
+		unsigned old_cs_data_size = cs.getDataSize() ;
+		string con = cs.add(data , cache_priority) ;
+		if(con == "replace")
+		{
+			// 记录 replace remove_data_size inserted_data_name nserted_data_size 
+			log(name , "replace " + int_to_str(old_cs_data_size - cs.getDataSize() + data.getSize()) + " " + data.getName().getStrName() + " " + int_to_str(data.getSize())) ;
+		}
+		else if(con == "cached")
+		{
+			log(name , "store " + data.getName().getStrName() + " " + int_to_str(data.getSize())) ;
+		}
+		return ;
 	}
-	else if(con == "cached")
+	else if(cache_strategy == "LRU")
 	{
-		log(name , "store " + data.getName().getStrName() + " " + int_to_str(data.getSize())) ;
+		unsigned old_cs_data_size = cs.getDataSize() ;
+		string con = cs.add(data) ;
+		if(con == "replace")
+		{
+			log(name , "replace " + int_to_str(old_cs_data_size - cs.getDataSize() + data.getSize()) + " " + data.getName().getStrName() + " " + int_to_str(data.getSize())) ;
+		}
+		else if(con == "cached")
+		{
+			log(name , "store " + data.getName().getStrName() + " " + int_to_str(data.getSize())) ;
+		}
+		return ;
 	}
+	else if(cache_strategy == "no-cache")
+	{
+		//nothing to do
+		return ;
+	}
+	throw std::runtime_error("cache strategy not defined") ;
 }
 
 //基于流行度,偏好度,更新basic_cache_priority_table和cs中的cache_priority
 void Node::updateCachePriority()
 {
-	for(map<ContentName , double>::iterator it = basic_cache_priority_table.begin() ; it != basic_cache_priority_table.end() ; ++it)
+	if(cache_strategy == "PPDS")
 	{
-		it->second *= old_weight ;
+		for(map<ContentName , double>::iterator it = basic_cache_priority_table.begin() ; it != basic_cache_priority_table.end() ; ++it)
+		{
+			it->second *= old_weight ;
+		}
+		for(PopularityTable::iterator it = popularity_table.begin() ; it != popularity_table.end() ; ++it)
+		{
+			basic_cache_priority_table[it->first] += (1-old_weight)*(popularity_table.getRate(it->first)*popu_weight + preference_table.getRate(it->first)*pref_weight) ;
+		}
+		for(list<pair<DataPacket , double> >::iterator it = cs.content.begin() ; it != cs.content.end() ; ++it)
+		{
+			it->second = calculateCachePriority(getBasicCachePriority(it->first.getName()) , it->first.getSize()) ;
+		}
+		popularity_table.clear() ;
+		preference_table.clear() ;
+		return ;
 	}
-	for(PopularityTable::iterator it = popularity_table.begin() ; it != popularity_table.end() ; ++it)
+	else if(cache_strategy == "LRU")
 	{
-		basic_cache_priority_table[it->first] += (1-old_weight)*(popularity_table.getRate(it->first)*popu_weight + preference_table.getRate(it->first)*pref_weight) ;
+		//noting to do
+		return ;
 	}
-	for(list<pair<DataPacket , double> >::iterator it = cs.content.begin() ; it != cs.content.end() ; ++it)
+	else if(cache_strategy == "no-cache")
 	{
-		it->second = calculateCachePriority(getBasicCachePriority(it->first.getName()) , it->first.getSize()) ;
+		//noting to do 
+		return ;
 	}
-	popularity_table.clear() ;
-	preference_table.clear() ;
+	throw std::runtime_error("cache strategy not defined") ;
 }
 
 unsigned Node::getDegree()

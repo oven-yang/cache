@@ -2,7 +2,6 @@
 #define FORWARDING_INTEREST_BASE_H
 
 #include"ContentName.h"
-// #include"ForwardingInterestBaseItem.h"
 #include"InterestPacket.h"
 #include"Interface.h"
 #include<map>
@@ -14,7 +13,6 @@ using std::set ;
 class ForwardingInterestBase
 {
 private :
-	// vector<ForwardingInterestBaseItem> fib ;
 	map<ContentName , set<Interface> > fib ;
 	unsigned capacity ;
 	unsigned item_quantity ;

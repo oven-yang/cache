@@ -7,8 +7,7 @@ vpath %.o ./bin
 
 objs = main.o ContentName.o global.o ContentStore.o DataPacket.o \
           InterestPacket.o PendingInterestTable.o \
-          ForwardingInterestBase.o Interface.o \
-		  Node.o PreferenceTable.o PopularityTable.o \
+          Interface.o Node.o PreferenceTable.o PopularityTable.o \
 		  RoutingTableItem.o RoutingTable.o
 objects = $(foreach i , $(objs) , ./bin/$(i))
 
@@ -25,7 +24,7 @@ RoutingTable.o : RoutingTable.cpp RoutingTable.h RoutingTableItem.h ContentName.
 RoutingTableItem.o : RoutingTableItem.cpp RoutingTableItem.h Interface.h
 	clang++ -g -std=c++11 -c src/RoutingTableItem.cpp -o ./bin/$@
 
-Node.o : Node.cpp Node.h Interface.h global.h ContentStore.h ForwardingInterestBase.h \
+Node.o : Node.cpp Node.h Interface.h global.h ContentStore.h \
          PendingInterestTable.h DataPacket.h InterestPacket.h RoutingTable.h
 	clang++ -g -std=c++11 -c src/Node.cpp -o ./bin/$@
 
@@ -47,9 +46,6 @@ ContentStore.o : ContentStore.cpp ContentStore.h
 PendingInterestTable.o : PendingInterestTable.cpp PendingInterestTable.h Interface.h ContentName.h InterestPacket.h
 	clang++ -g -std=c++11 -c src/PendingInterestTable.cpp -o ./bin/$@
 
-ForwardingInterestBase.o : ForwardingInterestBase.cpp ForwardingInterestBase.h Interface.h ContentName.h InterestPacket.h
-	clang++ -g -std=c++11 -c src/ForwardingInterestBase.cpp -o ./bin/$@
-
 Interface.o : Interface.cpp Interface.h global.h
 	clang++ -g -std=c++11 -c src/Interface.cpp -o ./bin/$@
 
@@ -67,11 +63,6 @@ clean :
 deletelog :
 	-rm ./source/log/*
 
-.PHONY : backup-log
-backup-log :
-	-rm ./log-backup/*
-	-mv ./source/log/* ./log-backup/
-
 .PHONY : init-node
 init-node :
 	g++ -o node-define plugin/node-define.cpp
@@ -79,7 +70,3 @@ init-node :
 .PHONY : init-log-analysis
 init-log-analysis :
 	g++ -o log-analysis plugin/log-analysis.cpp
-
-.PHONY : delete-conclusion
-delete-conclusion :
-	-rm ./conclusion/*
