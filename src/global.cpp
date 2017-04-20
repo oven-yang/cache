@@ -12,7 +12,7 @@ using std::endl ;
 //global variable
 
 timer global_clock = 0 ;
-timer update_circle = 100 ;//缓存更新周期
+timer update_circle = 2 ;//缓存更新周期
 double pref_weight = 0.4 ;
 double popu_weight = 0.5 ;
 double old_weight = 0.8 ;
