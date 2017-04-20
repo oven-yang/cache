@@ -1,0 +1,161 @@
+CSCapacity 200 0
+store g/up 4 64
+get g/up 4 disk 2 78
+store b/rh 77 84
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 disk 2 100
+get b/rh 77 cache 1 108
+error:get task error b/rh 116
+get b/rh 77 cache 1 124
+get b/rh 77 cache 1 124
+get b/rh 77 cache 1 146
+get b/rh 77 cache 1 146
+get b/rh 77 cache 1 166
+get b/rh 77 cache 1 166
+get b/rh 77 cache 1 166
+get b/rh 77 cache 1 182
+store h/le 6 199
+get b/rh 77 cache 1 206
+get b/rh 77 cache 1 206
+get b/rh 77 cache 1 206
+error:get task error b/rh 217
+get b/rh 77 cache 1 222
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+get h/le 6 disk 3 231
+error:get task error h/le 243
+get b/rh 77 cache 1 256
+get b/rh 77 cache 1 256
+get b/rh 77 cache 1 256
+get b/rh 77 cache 1 256
+get b/rh 77 cache 1 256
+get b/rh 77 cache 1 256
+error:get task error h/le 267
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 298
+get b/rh 77 cache 1 315
+get b/rh 77 cache 1 315
+get b/rh 77 cache 1 315
+get b/rh 77 cache 1 315
+error:get task error b/rh 320
+get b/rh 77 cache 1 327
+get b/rh 77 cache 1 353
+get b/rh 77 cache 1 353
+get b/rh 77 cache 1 353
+get b/rh 77 cache 1 353
+get b/rh 77 cache 1 353
+get b/rh 77 cache 1 353
+get b/rh 77 cache 1 353
+get b/rh 77 cache 1 353
+error:get task error b/rh 359
+get b/rh 77 cache 1 366
+error:get task error b/rh 378
+get b/rh 77 cache 1 392
+get b/rh 77 cache 1 392
+get b/rh 77 cache 1 392
+get b/rh 77 cache 1 392
+get b/rh 77 cache 1 396
+error:get task error b/rh 398
+get b/rh 77 cache 1 415
+get b/rh 77 cache 1 415
+get b/rh 77 cache 1 415
+get b/rh 77 cache 1 415
+get b/rh 77 cache 1 415
+get b/rh 77 cache 1 415
+get b/rh 77 cache 1 427
+get b/rh 77 cache 1 427
+get b/rh 77 cache 1 427
+get b/rh 77 cache 1 449
+get b/rh 77 cache 1 449
+get b/rh 77 cache 1 449
+get b/rh 77 cache 1 449
+get b/rh 77 cache 1 449
+error:get task error b/rh 456
+get b/rh 77 cache 1 460
+get b/rh 77 cache 1 465
+get b/rh 77 cache 1 472
+get b/rh 77 cache 1 478
+get b/rh 77 cache 1 483
+get b/rh 77 cache 1 499
+get b/rh 77 cache 1 499
+get b/rh 77 cache 1 499
+get b/rh 77 cache 1 499
+get b/rh 77 cache 1 517
+get b/rh 77 cache 1 517
+get b/rh 77 cache 1 517
+get b/rh 77 cache 1 517
+get b/rh 77 cache 1 529
+get b/rh 77 cache 1 529
+get b/rh 77 cache 1 541
+get b/rh 77 cache 1 541
+get b/rh 77 cache 1 541
+get b/rh 77 cache 1 549
+get b/rh 77 cache 1 549
+get b/rh 77 cache 1 556
+get b/rh 77 cache 1 564
+get b/rh 77 cache 1 568
+get b/rh 77 cache 1 577
+get b/rh 77 cache 1 577
+get b/rh 77 cache 1 577
+get b/rh 77 cache 1 577
+get b/rh 77 cache 1 584
+get b/rh 77 cache 1 584
+error:get task error b/rh 591
+get b/rh 77 cache 1 603
+get b/rh 77 cache 1 603
+get b/rh 77 cache 1 603
+get b/rh 77 cache 1 611
+get b/rh 77 cache 1 611
+get b/rh 77 cache 1 611
+get b/rh 77 cache 1 628
+get b/rh 77 cache 1 628
+get b/rh 77 cache 1 628
+error:get task error b/rh 636
+error:get task error b/rh 640
+error:get task error b/rh 660
+error:get task error b/rh 664
+error:get task error b/rh 673
+error:get task error b/rh 681
+error:get task error b/rh 683
+error:get task error b/rh 692
+error:get task error b/rh 697
+error:get task error b/rh 702
+error:get task error b/rh 711
+error:get task error b/rh 716
+error:get task error b/rh 724
+error:get task error b/rh 734

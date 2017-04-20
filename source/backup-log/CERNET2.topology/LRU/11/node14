@@ -1,0 +1,90 @@
+CSCapacity 200 0
+store m/gg 81 63
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 disk 2 74
+get m/gg 81 cache 1 76
+get m/gg 81 cache 1 78
+get m/gg 81 cache 1 78
+get m/gg 81 cache 1 85
+get m/gg 81 cache 1 85
+get m/gg 81 cache 1 85
+get m/gg 81 cache 1 85
+get m/gg 81 cache 1 85
+get m/gg 81 cache 1 85
+get m/gg 81 cache 1 85
+get m/gg 81 cache 1 90
+get m/gg 81 cache 1 90
+get m/gg 81 cache 1 90
+get m/gg 81 cache 1 90
+get m/gg 81 cache 1 90
+get m/gg 81 cache 1 93
+get m/gg 81 cache 1 93
+get m/gg 81 cache 1 93
+get m/gg 81 cache 1 99
+get m/gg 81 cache 1 99
+get m/gg 81 cache 1 99
+get m/gg 81 cache 1 99
+get m/gg 81 cache 1 99
+get m/gg 81 cache 1 99
+error:get task error m/gg 105
+error:get task error m/gg 111
+error:get task error m/gg 113
+error:get task error m/gg 116
+error:get task error m/gg 118
+error:get task error m/gg 120
+error:get task error m/gg 122
+error:get task error m/gg 124
+error:get task error m/gg 126
+store t/ut 50 128
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+get t/ut 50 disk 3 145
+store h/rp 30 148

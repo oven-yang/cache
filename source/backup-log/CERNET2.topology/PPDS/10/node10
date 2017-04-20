@@ -1,0 +1,14 @@
+CSCapacity 200 0
+store s/bb 34 35
+get s/bb 34 disk 2 48
+store i/zf 62 65
+get i/zf 62 disk 3 77
+get i/zf 62 disk 3 77
+get i/zf 62 disk 3 77
+get i/zf 62 disk 3 77
+get i/zf 62 disk 3 77
+get i/zf 62 disk 3 77
+get i/zf 62 disk 3 77
+get i/zf 62 disk 3 77
+store b/rw 8 84
+get b/rw 8 disk 4 85

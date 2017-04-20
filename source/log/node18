@@ -1,0 +1,102 @@
+CSCapacity 180 0
+store a/us 41 18
+get a/us 41 disk 2 28
+store i/fx 84 64
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+get i/fx 84 cache 2 81
+error:get_task i/fx not exist 86
+error:get_task i/fx not exist 88
+error:get_task i/fx not exist 90
+error:get_task i/fx not exist 99
+error:get_task i/fx not exist 112
+get p/tt 86 disk 4 123
+get p/tt 86 disk 4 123
+get p/tt 86 disk 4 123
+get p/tt 86 disk 4 123
+store l/fb 2 134
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get l/fb 2 disk 3 135
+get a/rj 58 disk 3 199
+get a/rj 58 disk 3 199
+get a/rj 58 disk 3 199
+replace 63 a/pz 63 200
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+get a/pz 63 disk 4 201
+store y/yv 33 205
+get y/yv 33 disk 4 206
+get y/yv 33 disk 4 206
+store c/nk 4 207
+get c/nk 4 disk 5 208

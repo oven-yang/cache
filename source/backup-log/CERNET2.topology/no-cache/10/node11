@@ -1,0 +1,8 @@
+CSCapacity 200 0
+get s/bb 34 disk 1 20
+get s/bb 34 disk 1 20
+get s/bb 34 disk 1 20
+get s/bb 34 disk 1 20
+get s/bb 34 disk 1 20
+error:get task error s/bb 24
+error:get task error s/bb 29

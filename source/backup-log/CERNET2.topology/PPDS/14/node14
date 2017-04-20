@@ -1,0 +1,6 @@
+CSCapacity 200 0
+store y/fi 42 563
+get y/fi 42 cache 4 579
+get y/fi 42 cache 4 579
+get y/fi 42 cache 4 579
+get y/fi 42 cache 4 579

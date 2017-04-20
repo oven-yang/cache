@@ -1,0 +1,123 @@
+CSCapacity 180 0
+get p/tt 86 disk 1 32
+get p/tt 86 disk 1 32
+get p/tt 86 disk 1 32
+get p/tt 86 disk 1 32
+error:get_task p/tt not exist 34
+error:get_task p/tt not exist 38
+error:get_task p/tt not exist 44
+store i/fx 84 51
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 disk 2 65
+get i/fx 84 cache 1 67
+error:get_task i/fx not exist 69
+get i/fx 84 cache 1 71
+error:get_task i/fx not exist 73
+error:get_task i/fx not exist 76
+error:get_task i/fx not exist 78
+error:get_task i/fx not exist 81
+error:get_task i/fx not exist 83
+error:get_task i/fx not exist 85
+error:get_task i/fx not exist 90
+error:get_task i/fx not exist 97
+error:get_task i/fx not exist 100
+error:get_task i/fx not exist 104
+error:get_task i/fx not exist 107
+error:get_task i/fx not exist 113
+error:get_task i/fx not exist 117
+error:get_task i/fx not exist 120
+error:get_task i/fx not exist 127
+store a/rj 58 132
+get a/rj 58 disk 4 133
+get a/rj 58 disk 4 133
+store y/yv 33 173
+get y/yv 33 disk 5 174
+store c/nk 4 175
+get c/nk 4 disk 6 177
+get c/nk 4 disk 6 177
+get c/nk 4 disk 6 177
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get l/fb 2 disk 6 178
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206
+get a/pz 63 disk 7 206

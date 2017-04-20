@@ -1,0 +1,3 @@
+CSCapacity 200 0
+store z/tx 14 410
+get z/tx 14 cache 4 413

@@ -1,0 +1,145 @@
+CSCapacity 200 0
+store r/pt 75 55
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 disk 2 97
+get r/pt 75 cache 1 104
+get r/pt 75 cache 1 104
+get r/pt 75 cache 1 104
+get r/pt 75 cache 1 104
+get r/pt 75 cache 1 112
+get r/pt 75 cache 1 112
+store f/ta 84 125
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 127
+get r/pt 75 cache 1 131
+get r/pt 75 cache 1 131
+get r/pt 75 cache 1 131
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 141
+get r/pt 75 cache 1 147
+get r/pt 75 cache 1 147
+get r/pt 75 cache 1 147
+get r/pt 75 cache 1 147
+get r/pt 75 cache 1 147
+get r/pt 75 cache 1 147
+get r/pt 75 cache 1 153
+get r/pt 75 cache 1 153
+get r/pt 75 cache 1 153
+get r/pt 75 cache 1 153
+get r/pt 75 cache 1 153
+get r/pt 75 cache 1 153
+replace 84 h/tz 61 158
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 163
+get r/pt 75 cache 1 167
+get r/pt 75 cache 1 167
+get r/pt 75 cache 1 167
+get r/pt 75 cache 1 167
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 176
+get r/pt 75 cache 1 180
+get r/pt 75 cache 1 180
+get r/pt 75 cache 1 180
+get r/pt 75 cache 1 180
+store i/od 62 184
+get f/ta 84 disk 2 186
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 188
+get r/pt 75 cache 1 193
+get r/pt 75 cache 1 193
+get r/pt 75 cache 1 193
+error:get task error r/pt 198
+error:get task error r/pt 200
+error:get task error r/pt 203
+error:get task error r/pt 206
+error:get task error r/pt 210
+error:get task error r/pt 214
+error:get task error r/pt 220
+error:get task error r/pt 222
+error:get task error r/pt 228
+error:get task error r/pt 230
+error:get task error r/pt 236
+error:get task error r/pt 242
+error:get task error r/pt 247
+error:get task error r/pt 250
+error:get task error r/pt 252
+error:get task error r/pt 254
+error:get task error r/pt 257
+error:get task error r/pt 260
+error:get task error r/pt 263
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+get i/od 62 disk 4 269
+error:get task error r/pt 271
+replace 123 b/xx 90 275
+error:get task error r/pt 278
+error:get task error r/pt 280
+replace 90 r/zc 39 307

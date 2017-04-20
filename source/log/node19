@@ -1,0 +1,155 @@
+CSCapacity 180 0
+get a/us 41 disk 1 2
+store l/fb 2 90
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+get l/fb 2 disk 2 133
+error:get_task l/fb not exist 136
+error:get_task l/fb not exist 138
+error:get_task l/fb not exist 140
+store i/fx 84 141
+error:get_task l/fb not exist 146
+error:get_task l/fb not exist 148
+store a/rj 58 154
+replace 63 a/pz 63 156
+error:get_task l/fb not exist 159
+error:get_task l/fb not exist 161
+error:get_task l/fb not exist 162
+error:get_task l/fb not exist 163
+error:get_task l/fb not exist 164
+error:get_task l/fb not exist 165
+error:get_task l/fb not exist 166
+error:get_task l/fb not exist 167
+error:get_task l/fb not exist 168
+error:get_task l/fb not exist 170
+error:get_task l/fb not exist 171
+error:get_task l/fb not exist 172
+error:get_task l/fb not exist 173
+error:get_task l/fb not exist 174
+error:get_task l/fb not exist 175
+error:get_task l/fb not exist 176
+error:get_task l/fb not exist 177
+error:get_task l/fb not exist 178
+error:get_task l/fb not exist 179
+error:get_task l/fb not exist 180
+error:get_task l/fb not exist 181
+error:get_task l/fb not exist 182
+error:get_task l/fb not exist 183
+store y/yv 33 184
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+get i/fx 84 cache 2 185
+error:get_task l/fb not exist 186
+replace 4 c/nk 4 187
+error:get_task l/fb not exist 188
+error:get_task l/fb not exist 189
+error:get_task l/fb not exist 190
+error:get_task l/fb not exist 192
+error:get_task l/fb not exist 193
+error:get_task l/fb not exist 194
+error:get_task l/fb not exist 195
+error:get_task l/fb not exist 196
+get a/rj 58 disk 2 197
+get a/rj 58 disk 2 197
+error:get_task l/fb not exist 198
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+get a/pz 63 disk 3 199
+error:get_task l/fb not exist 200
+error:get_task l/fb not exist 201
+error:get_task l/fb not exist 202
+get p/tt 86 disk 5 203
+get p/tt 86 disk 5 203
+get p/tt 86 disk 5 203
+get p/tt 86 disk 5 203
+get p/tt 86 disk 5 203
+get p/tt 86 disk 5 203
+get c/nk 4 disk 4 205

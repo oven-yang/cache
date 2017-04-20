@@ -1,0 +1,71 @@
+CSCapacity 200 0
+store z/zz 7 95
+get z/zz 7 disk 3 120
+store v/ew 56 128
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 disk 2 155
+get v/ew 56 cache 1 170
+get v/ew 56 cache 1 170
+get v/ew 56 cache 1 170
+get v/ew 56 cache 1 170
+get v/ew 56 cache 1 193
+get v/ew 56 cache 1 193
+get v/ew 56 cache 1 193
+get v/ew 56 cache 1 193
+get v/ew 56 cache 1 193
+get v/ew 56 cache 1 193
+get v/ew 56 cache 1 193
+error:get task error v/ew 196
+error:get task error v/ew 200
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 223
+get v/ew 56 cache 1 243
+get v/ew 56 cache 1 243
+get v/ew 56 cache 1 243
+get v/ew 56 cache 1 247
+get v/ew 56 cache 1 247
+get v/ew 56 cache 1 253
+get v/ew 56 cache 1 253
+get v/ew 56 cache 1 264
+get v/ew 56 cache 1 264
+get v/ew 56 cache 1 286
+get v/ew 56 cache 1 286
+get v/ew 56 cache 1 286
+get v/ew 56 cache 1 286
+get v/ew 56 cache 1 286
+error:get task error v/ew 289
+error:get task error v/ew 291
+get v/ew 56 cache 1 296
+get v/ew 56 cache 1 311
+get v/ew 56 cache 1 311
+get v/ew 56 cache 1 311
+get v/ew 56 cache 1 311
+get v/ew 56 cache 1 311
+error:get task error v/ew 320
+get v/ew 56 cache 1 338
+get v/ew 56 cache 1 338
+get v/ew 56 cache 1 338
+error:get task error v/ew 350
+error:get task error v/ew 358
+error:get task error v/ew 360
+error:get task error v/ew 367
+error:get task error v/ew 378
+error:get task error v/ew 391
+error:get task error v/ew 415

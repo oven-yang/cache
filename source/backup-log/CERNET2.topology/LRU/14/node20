@@ -1,0 +1,96 @@
+CSCapacity 200 0
+store g/gm 54 75
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+get g/gm 54 disk 3 86
+store g/fl 78 111
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+get g/gm 54 cache 1 117
+error:get task error g/gm 125
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/fl 78 disk 2 130
+get g/gm 54 cache 1 134
+error:get task error g/gm 136
+error:get task error g/gm 138
+get g/gm 54 cache 1 157
+get g/gm 54 cache 1 157
+get g/gm 54 cache 1 157
+get g/gm 54 cache 1 184
+get g/gm 54 cache 1 184
+get g/gm 54 cache 1 184
+get g/gm 54 cache 1 184
+get g/gm 54 cache 1 184
+get g/gm 54 cache 1 184
+get g/gm 54 cache 1 184
+get g/gm 54 cache 1 209
+get g/gm 54 cache 1 209
+get g/gm 54 cache 1 209
+get g/gm 54 cache 1 209
+get g/gm 54 cache 1 209
+get g/gm 54 cache 1 209
+get g/gm 54 cache 1 209
+get g/gm 54 cache 1 222
+get g/gm 54 cache 1 222
+get g/gm 54 cache 1 222
+get g/gm 54 cache 1 222
+error:get task error g/gm 225
+get g/gm 54 cache 1 229
+get g/gm 54 cache 1 229
+get g/gm 54 cache 1 236
+get g/gm 54 cache 1 236
+get g/gm 54 cache 1 242
+error:get task error g/gm 248
+error:get task error g/gm 261
+error:get task error g/gm 271
+error:get task error g/gm 286
+replace 78 m/ur 82 355
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413
+get m/ur 82 disk 4 413

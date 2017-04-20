@@ -1,0 +1,8 @@
+CSCapacity 200 0
+store u/uj 19 141
+store b/xx 90 147
+store r/zc 39 200
+get r/zc 39 disk 4 243
+get r/zc 39 disk 4 243
+get r/zc 39 disk 4 243
+replace 19 h/tz 61 247

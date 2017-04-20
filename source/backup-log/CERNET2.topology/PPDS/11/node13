@@ -1,0 +1,55 @@
+CSCapacity 200 0
+store m/gg 81 83
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 disk 3 100
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 108
+get m/gg 81 cache 1 115
+get m/gg 81 cache 1 115
+error:get task error m/gg 117
+error:get task error m/gg 120
+error:get task error m/gg 122
+error:get task error m/gg 133
+error:get task error m/gg 137
+store r/xo 90 188
+get r/xo 90 disk 4 189

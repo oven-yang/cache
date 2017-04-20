@@ -1,0 +1,27 @@
+CSCapacity 200 0
+store l/pn 87 104
+store e/qy 94 122
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get l/pn 87 disk 2 128
+get e/qy 94 disk 3 147
+get e/qy 94 disk 3 147
+get e/qy 94 disk 3 147
+get e/qy 94 disk 3 147
+replace 27 h/be 27 211
+get h/be 27 disk 3 238
+get h/be 27 disk 3 238
+get h/be 27 disk 3 238
+store z/tx 14 398
+get n/ec 52 disk 6 672

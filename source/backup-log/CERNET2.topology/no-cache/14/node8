@@ -1,0 +1,82 @@
+CSCapacity 200 0
+get m/ur 82 disk 1 2
+get m/ur 82 disk 1 23
+get m/ur 82 disk 1 23
+get m/ur 82 disk 1 42
+get m/ur 82 disk 1 42
+get m/ur 82 disk 1 59
+error:get task error m/ur 70
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get g/gm 54 disk 2 74
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+get m/ur 82 disk 1 127
+error:get task error m/ur 130
+error:get task error m/ur 143
+error:get task error m/ur 153
+error:get task error m/ur 164
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get g/gm 54 disk 2 256
+get y/fi 42 disk 3 378
+get y/fi 42 disk 3 378
+get y/fi 42 disk 3 378
+get y/fi 42 disk 3 378
+error:get task error g/gm 522

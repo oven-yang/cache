@@ -1,0 +1,8 @@
+CSCapacity 200 0
+get k/oy 29 disk 1 19
+get k/oy 29 disk 1 19
+get k/oy 29 disk 1 19
+get i/hu 90 disk 1 22
+get i/hu 90 disk 1 22
+error:get task error k/oy 48
+get x/gm 59 disk 5 870

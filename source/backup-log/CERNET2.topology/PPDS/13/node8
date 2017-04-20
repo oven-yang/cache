@@ -1,0 +1,5 @@
+CSCapacity 200 0
+store h/be 27 224
+get h/be 27 disk 4 234
+get h/be 27 disk 4 234
+get h/be 27 disk 4 234

@@ -1,0 +1,14 @@
+CSCapacity 200 0
+store w/qz 6 13
+get w/qz 6 disk 2 23
+store z/ix 21 48
+get z/ix 21 cache 2 64
+get z/ix 21 cache 2 64
+get z/ix 21 cache 2 64
+get z/ix 21 cache 2 64
+get z/ix 21 cache 2 64
+get z/ix 21 cache 2 64
+get z/ix 21 cache 2 64
+store b/rw 8 82
+store v/mq 37 86
+get v/mq 37 disk 3 87

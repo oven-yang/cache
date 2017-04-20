@@ -1,0 +1,25 @@
+CSCapacity 200 0
+store d/jx 73 36
+store z/zz 62 49
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 disk 2 59
+get d/jx 73 cache 1 72
+get d/jx 73 cache 1 78
+get d/jx 73 cache 1 78
+get d/jx 73 cache 1 78
+get d/jx 73 cache 1 96
+get d/jx 73 cache 1 96
+get d/jx 73 cache 1 96
+get d/jx 73 cache 1 110
+get d/jx 73 cache 1 110
+error:get task error d/jx 130
+error:get task error d/jx 144
+store h/tz 61 281

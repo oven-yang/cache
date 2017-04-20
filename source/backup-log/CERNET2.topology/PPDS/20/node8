@@ -1,0 +1,22 @@
+CSCapacity 200 0
+store t/hg 60 69
+get t/hg 60 disk 2 88
+get t/hg 60 disk 2 88
+get t/hg 60 disk 2 88
+get t/hg 60 disk 2 88
+get t/hg 60 disk 2 88
+get t/hg 60 disk 2 88
+store b/ty 28 102
+get b/ty 28 disk 3 126
+get b/ty 28 disk 3 126
+get b/ty 28 disk 3 126
+get b/ty 28 disk 3 126
+get t/hg 60 cache 1 133
+get t/hg 60 cache 1 133
+get t/hg 60 cache 1 133
+get t/hg 60 cache 1 133
+get t/hg 60 cache 1 133
+get t/hg 60 cache 1 148
+get t/hg 60 cache 1 148
+get t/hg 60 cache 1 178
+error:get task error t/hg 209

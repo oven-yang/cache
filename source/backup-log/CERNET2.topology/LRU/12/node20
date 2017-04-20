@@ -1,0 +1,116 @@
+CSCapacity 200 0
+get r/pt 75 disk 1 2
+get r/pt 75 disk 1 23
+get r/pt 75 disk 1 23
+get r/pt 75 disk 1 23
+get r/pt 75 disk 1 23
+get r/pt 75 disk 1 23
+get r/pt 75 disk 1 30
+get r/pt 75 disk 1 34
+get r/pt 75 disk 1 46
+get r/pt 75 disk 1 46
+get r/pt 75 disk 1 46
+get r/pt 75 disk 1 58
+get r/pt 75 disk 1 58
+get r/pt 75 disk 1 58
+get r/pt 75 disk 1 58
+get r/pt 75 disk 1 71
+get r/pt 75 disk 1 71
+get r/pt 75 disk 1 71
+get r/pt 75 disk 1 71
+get r/pt 75 disk 1 87
+get r/pt 75 disk 1 87
+get r/pt 75 disk 1 87
+get r/pt 75 disk 1 87
+get r/pt 75 disk 1 87
+get r/pt 75 disk 1 87
+get r/pt 75 disk 1 93
+get r/pt 75 disk 1 100
+get r/pt 75 disk 1 100
+get r/pt 75 disk 1 100
+get r/pt 75 disk 1 100
+get r/pt 75 disk 1 100
+get r/pt 75 disk 1 107
+get r/pt 75 disk 1 118
+get r/pt 75 disk 1 118
+get r/pt 75 disk 1 118
+get r/pt 75 disk 1 118
+error:get task error r/pt 120
+get r/pt 75 disk 1 128
+get r/pt 75 disk 1 128
+get r/pt 75 disk 1 128
+get r/pt 75 disk 1 128
+get r/pt 75 disk 1 128
+get r/pt 75 disk 1 134
+get r/pt 75 disk 1 134
+get r/pt 75 disk 1 134
+get r/pt 75 disk 1 134
+get r/pt 75 disk 1 143
+get r/pt 75 disk 1 143
+get r/pt 75 disk 1 143
+get r/pt 75 disk 1 145
+get r/pt 75 disk 1 147
+get r/pt 75 disk 1 147
+get r/pt 75 disk 1 154
+get r/pt 75 disk 1 154
+get r/pt 75 disk 1 154
+get r/pt 75 disk 1 154
+get r/pt 75 disk 1 154
+get r/pt 75 disk 1 154
+get r/pt 75 disk 1 154
+get r/pt 75 disk 1 158
+get r/pt 75 disk 1 158
+get r/pt 75 disk 1 158
+get r/pt 75 disk 1 158
+get r/pt 75 disk 1 160
+get r/pt 75 disk 1 160
+get r/pt 75 disk 1 165
+get r/pt 75 disk 1 165
+get r/pt 75 disk 1 165
+get r/pt 75 disk 1 165
+get r/pt 75 disk 1 165
+get r/pt 75 disk 1 169
+get r/pt 75 disk 1 169
+get r/pt 75 disk 1 169
+get r/pt 75 disk 1 169
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 179
+get r/pt 75 disk 1 183
+get r/pt 75 disk 1 183
+get r/pt 75 disk 1 183
+get r/pt 75 disk 1 183
+get r/pt 75 disk 1 187
+get r/pt 75 disk 1 187
+get r/pt 75 disk 1 187
+get r/pt 75 disk 1 187
+get r/pt 75 disk 1 190
+get r/pt 75 disk 1 190
+get r/pt 75 disk 1 190
+get r/pt 75 disk 1 193
+get r/pt 75 disk 1 193
+error:get task error r/pt 202
+error:get task error r/pt 206
+error:get task error r/pt 211
+error:get task error r/pt 213
+error:get task error r/pt 216
+error:get task error r/pt 221
+error:get task error r/pt 223
+error:get task error r/pt 226
+error:get task error r/pt 228
+error:get task error r/pt 233
+error:get task error r/pt 236
+error:get task error r/pt 239
+error:get task error r/pt 244
+error:get task error r/pt 248
+error:get task error r/pt 251
+error:get task error r/pt 253
+store r/zc 39 345
+get r/zc 39 disk 4 346

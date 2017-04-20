@@ -1,0 +1,137 @@
+CSCapacity 180 0
+get a/pz 63 disk 1 33
+get a/pz 63 disk 1 33
+get a/pz 63 disk 1 33
+get a/pz 63 disk 1 33
+get a/pz 63 disk 1 33
+get a/pz 63 disk 1 33
+get a/pz 63 disk 1 40
+get a/pz 63 disk 1 43
+get a/pz 63 disk 1 53
+get a/pz 63 disk 1 56
+error:get_task a/pz not exist 66
+error:get_task a/pz not exist 77
+error:get_task a/pz not exist 88
+error:get_task a/pz not exist 94
+error:get_task a/pz not exist 103
+store l/fb 2 136
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+get l/fb 2 disk 4 146
+error:get_task l/fb not exist 147
+error:get_task l/fb not exist 148
+error:get_task l/fb not exist 149
+error:get_task l/fb not exist 150
+error:get_task l/fb not exist 151
+error:get_task l/fb not exist 152
+error:get_task l/fb not exist 153
+error:get_task l/fb not exist 154
+error:get_task l/fb not exist 155
+store i/fx 84 188
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+get i/fx 84 cache 4 189
+store a/rj 58 200
+get a/rj 58 disk 4 201
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+get p/tt 86 disk 7 207
+store y/yv 33 209
+replace 4 c/nk 4 211
+get c/nk 4 disk 6 212
+get c/nk 4 disk 6 212
+get c/nk 4 disk 6 212

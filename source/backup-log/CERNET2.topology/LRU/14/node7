@@ -1,0 +1,95 @@
+CSCapacity 200 0
+store m/ur 82 74
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+get m/ur 82 disk 2 90
+store g/gm 54 91
+get m/ur 82 cache 1 94
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get g/gm 54 disk 3 111
+get m/ur 82 cache 1 113
+get m/ur 82 cache 1 113
+get m/ur 82 cache 1 122
+error:get task error m/ur 126
+get g/gm 54 cache 1 131
+get g/gm 54 cache 1 131
+error:get task error g/gm 134
+get m/ur 82 cache 1 155
+get m/ur 82 cache 1 155
+get m/ur 82 cache 1 155
+get m/ur 82 cache 1 155
+get m/ur 82 cache 1 155
+get m/ur 82 cache 1 155
+get m/ur 82 cache 1 155
+get g/gm 54 cache 1 158
+get g/gm 54 cache 1 158
+get g/gm 54 cache 1 158
+get g/gm 54 cache 1 158
+get g/gm 54 cache 1 158
+get g/gm 54 cache 1 176
+get g/gm 54 cache 1 176
+get g/gm 54 cache 1 176
+get g/gm 54 cache 1 176
+get m/ur 82 cache 1 187
+get m/ur 82 cache 1 187
+get m/ur 82 cache 1 187
+get m/ur 82 cache 1 187
+error:get task error m/ur 194
+error:get task error m/ur 198
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+get g/gm 54 cache 1 217
+error:get task error m/ur 222
+error:get task error m/ur 241
+get g/gm 54 cache 1 250
+get g/gm 54 cache 1 250
+get g/gm 54 cache 1 250
+get g/gm 54 cache 1 250
+get g/gm 54 cache 1 250
+get g/gm 54 cache 1 250
+get g/gm 54 cache 1 250
+get g/gm 54 cache 1 260
+get g/gm 54 cache 1 260
+get g/gm 54 cache 1 262
+get g/gm 54 cache 1 290
+get g/gm 54 cache 1 290
+get g/gm 54 cache 1 290
+get g/gm 54 cache 1 290
+get g/gm 54 cache 1 290
+get g/gm 54 cache 1 290
+error:get task error g/gm 294
+error:get task error g/gm 306
+error:get task error g/gm 315
+error:get task error g/gm 320
+error:get task error g/gm 330
+error:get task error g/gm 352
+replace 82 b/ln 83 359
+get b/ln 83 disk 4 442
+get b/ln 83 disk 4 442

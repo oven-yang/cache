@@ -1,0 +1,73 @@
+CSCapacity 200 0
+get t/ut 50 disk 1 2
+get t/ut 50 disk 1 2
+error:get task error t/ut 5
+get t/ut 50 disk 1 34
+get t/ut 50 disk 1 34
+get t/ut 50 disk 1 34
+get t/ut 50 disk 1 34
+get t/ut 50 disk 1 34
+get t/ut 50 disk 1 34
+get t/ut 50 disk 1 34
+get t/ut 50 disk 1 45
+get t/ut 50 disk 1 47
+get t/ut 50 disk 1 57
+get t/ut 50 disk 1 57
+get t/ut 50 disk 1 57
+get t/ut 50 disk 1 57
+get t/ut 50 disk 1 57
+get t/ut 50 disk 1 66
+get t/ut 50 disk 1 66
+get t/ut 50 disk 1 66
+get t/ut 50 disk 1 66
+get t/ut 50 disk 1 66
+get t/ut 50 disk 1 66
+get t/ut 50 disk 1 66
+get t/ut 50 disk 1 66
+error:get task error t/ut 73
+store m/gg 81 78
+error:get task error t/ut 90
+error:get task error t/ut 99
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+get m/gg 81 disk 2 110
+error:get task error m/gg 115
+store r/xo 90 127
+store h/vr 7 142
+get h/vr 7 disk 2 144
+get h/vr 7 disk 2 144
+get h/vr 7 disk 2 144
+replace 30 h/rp 30 226

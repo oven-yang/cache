@@ -1,0 +1,11 @@
+CSCapacity 200 0
+get o/zn 35 disk 1 20
+get o/zn 35 disk 1 20
+get o/zn 35 disk 1 20
+get o/zn 35 disk 1 20
+get h/rp 30 disk 2 27
+get o/zn 35 disk 1 35
+error:get task error o/zn 44
+get q/ox 7 disk 3 151
+get q/ox 7 disk 3 151
+get q/ox 7 disk 3 151

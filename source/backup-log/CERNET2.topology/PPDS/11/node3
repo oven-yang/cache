@@ -1,0 +1,64 @@
+CSCapacity 200 0
+store m/gg 81 94
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+get m/gg 81 disk 2 122
+error:get task error m/gg 126
+error:get task error m/gg 129
+error:get task error m/gg 131
+error:get task error m/gg 133
+error:get task error m/gg 135
+store z/zz 12 230

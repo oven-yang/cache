@@ -1,0 +1,24 @@
+CSCapacity 200 0
+store z/ix 21 13
+get z/ix 21 disk 2 22
+get z/ix 21 disk 2 22
+get z/ix 21 disk 2 22
+get z/ix 21 disk 2 22
+get z/ix 21 disk 2 22
+get z/ix 21 disk 2 22
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+get z/ix 21 cache 1 40
+error:get task error z/ix 54
+error:get task error z/ix 56
+error:get task error z/ix 58
+error:get task error z/ix 63
+store v/mq 37 85

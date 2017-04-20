@@ -1,0 +1,86 @@
+CSCapacity 200 0
+get h/be 27 disk 1 25
+get h/be 27 disk 1 25
+get e/qy 94 disk 1 35
+get e/qy 94 disk 1 35
+error:get task error h/be 51
+get e/qy 94 disk 1 55
+get e/qy 94 disk 1 55
+store d/mr 97 66
+error:get task error e/qy 88
+store z/tx 14 99
+store j/ek 43 109
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+get d/mr 97 disk 2 116
+error:get task error d/mr 126
+replace 57 l/pn 87 137
+get d/mr 97 cache 1 144
+get d/mr 97 cache 1 144
+get d/mr 97 cache 1 144
+get z/tx 14 disk 3 160
+get z/tx 14 disk 3 160
+get d/mr 97 cache 1 166
+get d/mr 97 cache 1 166
+get d/mr 97 cache 1 166
+get d/mr 97 cache 1 166
+get j/ek 43 disk 2 172
+get j/ek 43 disk 2 172
+get j/ek 43 disk 2 172
+get j/ek 43 disk 2 172
+get d/mr 97 cache 1 176
+get d/mr 97 cache 1 176
+get d/mr 97 cache 1 176
+get d/mr 97 cache 1 176
+get d/mr 97 cache 1 176
+get d/mr 97 cache 1 176
+get d/mr 97 cache 1 176
+get d/mr 97 cache 1 185
+get d/mr 97 cache 1 185
+get d/mr 97 cache 1 185
+get d/mr 97 cache 1 185
+get d/mr 97 cache 1 198
+get d/mr 97 cache 1 198
+get d/mr 97 cache 1 198
+get d/mr 97 cache 1 198
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+get l/pn 87 disk 2 208
+replace 87 d/sx 22 214
+error:get task error d/mr 219
+error:get task error d/mr 229
+error:get task error d/mr 244
+error:get task error d/mr 248
+error:get task error d/mr 262
+error:get task error d/mr 277
+error:get task error d/mr 279
+store z/tx 14 501
+store n/ec 52 667

@@ -1,0 +1,84 @@
+CSCapacity 200 0
+store z/tx 14 32
+store e/qy 94 54
+get e/qy 94 disk 2 76
+get e/qy 94 disk 2 76
+get e/qy 94 disk 2 76
+get e/qy 94 disk 2 76
+get e/qy 94 disk 2 76
+get e/qy 94 disk 2 76
+get e/qy 94 disk 2 76
+get e/qy 94 disk 2 76
+replace 14 d/mr 97 140
+replace 94 h/be 27 156
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 disk 3 167
+get d/mr 97 cache 1 175
+get d/mr 97 cache 1 175
+get d/mr 97 cache 1 175
+get d/mr 97 cache 1 175
+get d/mr 97 cache 1 175
+get d/mr 97 cache 1 175
+get d/mr 97 cache 1 182
+get d/mr 97 cache 1 182
+get d/mr 97 cache 1 182
+get d/mr 97 cache 1 191
+get d/mr 97 cache 1 191
+get d/mr 97 cache 1 191
+get d/mr 97 cache 1 191
+get d/mr 97 cache 1 196
+get d/mr 97 cache 1 196
+get d/mr 97 cache 1 200
+error:get task error d/mr 202
+error:get task error d/mr 211
+error:get task error d/mr 219
+error:get task error d/mr 222
+error:get task error d/mr 226
+error:get task error d/mr 232
+error:get task error d/mr 238
+error:get task error d/mr 244
+error:get task error d/mr 246
+store z/tx 14 462

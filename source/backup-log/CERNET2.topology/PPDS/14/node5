@@ -1,0 +1,73 @@
+CSCapacity 200 0
+store g/fl 78 143
+store g/gm 54 167
+get g/fl 78 disk 2 192
+get g/fl 78 disk 2 192
+get g/fl 78 disk 2 192
+get g/fl 78 disk 2 192
+get g/fl 78 disk 2 192
+store p/qw 1 215
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 2 218
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 257
+get g/gm 54 cache 1 262
+get g/gm 54 cache 1 262
+get g/gm 54 cache 1 271
+get g/gm 54 cache 1 271
+error:get task error g/gm 276
+get p/qw 1 disk 3 281
+error:get task error g/gm 316
+error:get task error g/gm 325
+error:get task error g/gm 340
+error:get task error g/gm 347
+store y/fi 42 454
+store z/zz 25 887
+replace 41 a/yt 41 934

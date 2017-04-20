@@ -1,0 +1,11 @@
+CSCapacity 200 0
+store i/hu 90 31
+get i/hu 90 disk 2 43
+get i/hu 90 disk 2 43
+get i/hu 90 disk 2 43
+error:get task error i/hu 60
+store k/oy 29 83
+get k/oy 29 disk 2 102
+get k/oy 29 disk 2 102
+get k/oy 29 disk 2 102
+get k/oy 29 disk 2 102

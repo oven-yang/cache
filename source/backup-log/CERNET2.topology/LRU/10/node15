@@ -1,0 +1,4 @@
+CSCapacity 200 0
+store b/rw 8 77
+get b/rw 8 disk 3 79
+store z/zz 27 80

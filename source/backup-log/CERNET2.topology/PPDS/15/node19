@@ -1,0 +1,14 @@
+CSCapacity 200 0
+store u/xr 51 26
+get u/xr 51 disk 2 66
+store q/nn 18 87
+store q/ox 91 96
+store p/lc 32 104
+get q/ox 91 disk 2 159
+get q/ox 91 disk 2 159
+get q/ox 91 disk 2 159
+get q/ox 91 disk 2 159
+get q/ox 91 disk 2 159
+get q/ox 91 disk 2 159
+replace 78 a/vf 78 224
+get a/vf 78 disk 3 295

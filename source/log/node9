@@ -1,0 +1,140 @@
+CSCapacity 180 0
+store g/ab 78 16
+get g/ab 78 disk 2 32
+get l/fb 2 disk 1 40
+get l/fb 2 disk 1 40
+get l/fb 2 disk 1 40
+get l/fb 2 disk 1 40
+get l/fb 2 disk 1 40
+get l/fb 2 disk 1 43
+get l/fb 2 disk 1 43
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 63
+get l/fb 2 disk 1 65
+store a/us 41 82
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 92
+get l/fb 2 disk 1 97
+get l/fb 2 disk 1 97
+get l/fb 2 disk 1 97
+get l/fb 2 disk 1 97
+error:get_task l/fb not exist 99
+error:get_task l/fb not exist 102
+error:get_task l/fb not exist 108
+error:get_task l/fb not exist 110
+get a/us 41 disk 2 116
+error:get_task l/fb not exist 119
+error:get_task l/fb not exist 122
+error:get_task l/fb not exist 124
+error:get_task l/fb not exist 126
+error:get_task l/fb not exist 128
+error:get_task l/fb not exist 130
+replace 63 a/pz 63 132
+error:get_task l/fb not exist 135
+error:get_task l/fb not exist 137
+error:get_task l/fb not exist 139
+error:get_task l/fb not exist 141
+error:get_task l/fb not exist 142
+error:get_task l/fb not exist 143
+error:get_task l/fb not exist 144
+error:get_task l/fb not exist 145
+error:get_task l/fb not exist 146
+error:get_task l/fb not exist 147
+error:get_task l/fb not exist 148
+error:get_task l/fb not exist 149
+error:get_task l/fb not exist 150
+error:get_task l/fb not exist 151
+error:get_task l/fb not exist 152
+error:get_task l/fb not exist 153
+error:get_task l/fb not exist 154
+error:get_task l/fb not exist 155
+error:get_task l/fb not exist 156
+error:get_task l/fb not exist 157
+error:get_task l/fb not exist 158
+error:get_task l/fb not exist 159
+error:get_task l/fb not exist 160
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+get a/pz 63 disk 4 161
+error:get_task l/fb not exist 162
+error:get_task l/fb not exist 163
+error:get_task l/fb not exist 164
+error:get_task l/fb not exist 165
+error:get_task l/fb not exist 166
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+get i/fx 84 cache 3 186
+store a/rj 58 197
+get a/rj 58 disk 3 198
+get p/tt 86 disk 6 204
+get p/tt 86 disk 6 204
+get p/tt 86 disk 6 204
+get p/tt 86 disk 6 204
+get p/tt 86 disk 6 204
+get p/tt 86 disk 6 204
+get p/tt 86 disk 6 204
+get p/tt 86 disk 6 204
+replace 4 c/nk 4 206
+get y/yv 33 disk 4 207
+get c/nk 4 disk 5 208
+get c/nk 4 disk 5 208
+get c/nk 4 disk 5 208
+get c/nk 4 disk 5 208

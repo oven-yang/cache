@@ -1,0 +1,31 @@
+CSCapacity 200 0
+store e/qy 94 62
+get l/pn 87 disk 1 66
+get l/pn 87 disk 1 66
+get l/pn 87 disk 1 66
+get l/pn 87 disk 1 66
+get l/pn 87 disk 1 66
+get l/pn 87 disk 1 66
+get l/pn 87 disk 1 66
+get l/pn 87 disk 1 82
+get l/pn 87 disk 1 82
+get l/pn 87 disk 1 82
+get l/pn 87 disk 1 82
+get l/pn 87 disk 1 97
+get e/qy 94 disk 2 99
+get e/qy 94 disk 2 99
+get e/qy 94 disk 2 99
+get e/qy 94 disk 2 99
+get e/qy 94 disk 2 99
+get e/qy 94 disk 2 99
+get e/qy 94 disk 2 99
+get e/qy 94 disk 2 99
+error:get task error l/pn 109
+error:get task error l/pn 114
+error:get task error l/pn 121
+store h/be 27 131
+error:get task error l/pn 142
+store d/sx 22 354
+get d/sx 22 disk 3 410
+store z/tx 14 503
+replace 94 n/ec 52 669
