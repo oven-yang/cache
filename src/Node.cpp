@@ -323,7 +323,7 @@ bool Node::receivePacket(InterestPacket interest_packet , Node* sender)
 	{
 		pit.add(interest_packet.getName() , interface) ;
 		Interface* forward_interface = getForwardInterface(interest_packet.getName()) ;
-		if(forward_interface->getId() != 0)
+		if(forward_interface != nullptr)
 		{
 			addTask(interest_packet , *forward_interface) ;
 		}
