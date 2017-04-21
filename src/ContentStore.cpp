@@ -78,7 +78,7 @@ string ContentStore::add(DataPacket data)
 	if(cache_strategy == "LRU-random")
 	{
 		srand(time(0)) ;
-		if(rand()%2 == 0)
+		if(rand()%100 < 20)//80% 缓存
 		{
 			return "fail" ;
 		}
