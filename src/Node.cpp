@@ -434,7 +434,7 @@ void Node::updateCachePriority()
 		//noting to do
 		return ;
 	}
-	else if(cache_strategy == "LRU-ranndom")
+	else if(cache_strategy == "LRU-random")
 	{
 		//noting to do
 		return ;
