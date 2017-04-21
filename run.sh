@@ -1,10 +1,11 @@
 #!/bin/bash
+make
 make init-log-analysis
 make init-node
 rm -f ./source/log/*
 topologyarr=("CERNET2" "Deltacom" "GtsCe" "Oteglobe")
 nodes=(20 113 149 93)
-strategyarr=("PPDS" "LRU" "no-cache")
+strategyarr=("PPDS" "LRU" "no-cache" "LRU-random")
 i=0
 while [ $i -lt ${#topologyarr[*]} ]
 do
