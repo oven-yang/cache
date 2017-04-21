@@ -386,7 +386,7 @@ void Node::cache(DataPacket data)
 		}
 		return ;
 	}
-	else if(cache_strategy == "LRU")
+	else if(cache_strategy == "LRU" || cache_strategy == "LRU-random")
 	{
 		unsigned old_cs_data_size = cs.getDataSize() ;
 		string con = cs.add(data) ;
@@ -430,6 +430,11 @@ void Node::updateCachePriority()
 		return ;
 	}
 	else if(cache_strategy == "LRU")
+	{
+		//noting to do
+		return ;
+	}
+	else if(cache_strategy == "LRU-ranndom")
 	{
 		//noting to do
 		return ;

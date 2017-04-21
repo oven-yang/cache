@@ -1,7 +1,0 @@
-CSCapacity 200 0
-store i/zf 62 51
-get i/zf 62 disk 2 61
-get i/zf 62 disk 2 61
-get i/zf 62 disk 2 61
-store z/zz 27 87
-get z/zz 27 disk 6 88

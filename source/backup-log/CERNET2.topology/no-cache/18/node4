@@ -1,9 +1,0 @@
-CSCapacity 200 0
-get i/hu 90 disk 2 43
-get i/hu 90 disk 2 43
-get i/hu 90 disk 2 43
-get k/oy 29 disk 2 102
-get k/oy 29 disk 2 102
-get k/oy 29 disk 2 102
-get k/oy 29 disk 2 102
-error:get task error i/hu 176

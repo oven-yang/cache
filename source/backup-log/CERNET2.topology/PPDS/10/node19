@@ -1,8 +1,0 @@
-CSCapacity 200 0
-store b/rw 8 81
-store v/mq 37 83
-store z/zz 27 84
-get v/mq 37 disk 4 85
-get v/mq 37 disk 4 85
-get v/mq 37 disk 4 85
-get v/mq 37 disk 4 85

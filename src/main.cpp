@@ -45,7 +45,7 @@ void init_log(vector<Node*>&) ;
 
 void print() ;
 
-int main(int argc , char *argv[])//./cache topology(CERNET2/Deltacom/GtsCe/Oteglobe) cache-strategy("PPDS LRU no-cache")
+int main(int argc , char *argv[])//./cache topology(CERNET2/Deltacom/GtsCe/Oteglobe) cache-strategy("PPDS LRU no-cache LRU-random")
 {
 
 	if(argc != 3)
@@ -63,9 +63,9 @@ int main(int argc , char *argv[])//./cache topology(CERNET2/Deltacom/GtsCe/Otegl
 	LINK_FILE = "./source/link/" + LINK_FILE + ".topology" ;
 
 	cache_strategy = argv[2] ;
-	if(cache_strategy != "PPDS" && cache_strategy != "LRU" && cache_strategy != "no-cache")
+	if(cache_strategy != "PPDS" && cache_strategy != "LRU" && cache_strategy != "no-cache" && cache_strategy != "LRU-random")
 	{
-		cout<<"main:para 3(cache strategy) wrong. only PPDS/LRU/no-cache is supported"<<endl ;
+		cout<<"main:para 3(cache strategy) wrong. only PPDS/LRU/no-cache/LRU-random is supported"<<endl ;
 		return 0 ;
 	}
 

@@ -2,6 +2,8 @@
 #include"../header/global.h"
 #include<stdexcept>
 #include<algorithm>
+#include<cstdlib>
+#include<ctime>
 
 ContentStore::ContentStore() : capacity(CS_DEFAULT_CAPACITY) , data_size(0)
 {
@@ -23,7 +25,7 @@ void ContentStore::insert(DataPacket data , double cache_priority)
 	content.insert(it , make_pair(data , cache_priority)) ;
 }
 
-string ContentStore::add(DataPacket data , double cache_priority)
+string ContentStore::add(DataPacket data , double cache_priority)//LRU LRU-random
 {
 	if(cache_strategy != "PPDS")
 	{
@@ -69,9 +71,17 @@ string ContentStore::add(DataPacket data , double cache_priority)
 
 string ContentStore::add(DataPacket data)
 {
-	if(cache_strategy != "LRU")
+	if(cache_strategy != "LRU" && cache_strategy != "LRU-random")
 	{
 		throw std::runtime_error("cs:cache strategy is " + cache_strategy + " while cs::add fun is for LRU") ;
+	}
+	if(cache_strategy == "LRU-random")
+	{
+		srand(time(0)) ;
+		if(rand()%2 == 0)
+		{
+			return "fail" ;
+		}
 	}
 	bool remove_data = false ;
 	data.setHop(0) ;
@@ -79,7 +89,6 @@ string ContentStore::add(DataPacket data)
 	auto it = find(content_LRU.begin() , content_LRU.end() , data) ;
 	if(it != content_LRU.end())
 	{
-		content_LRU.splice(content_LRU.end() , content_LRU , it) ;
 		return "exist" ;
 	}
 	if(capacity < data.getSize())
@@ -118,7 +127,7 @@ void ContentStore::remove(ContentName name)
 		}
 		return ;
 	}
-	else if(cache_strategy == "LRU")
+	else if(cache_strategy == "LRU" || cache_strategy == "LRU-random")
 	{
 		for(auto it = content_LRU.begin() ; it != content_LRU.end() ; ++it)
 		{
@@ -156,7 +165,18 @@ bool ContentStore::isExist(ContentName name) const
 		}
 		return false ;
 	}
-	else if(cache_strategy == "LRU")
+	else if(cache_strategy == "LRU" || cache_strategy == "LRU-random")
+	{
+		for(auto it = content_LRU.begin() ; it != content_LRU.end() ; ++it)
+		{
+			if(it->getName() == name)
+			{
+				return true ;
+			}
+		}
+		return false ;
+	}
+	else if(cache_strategy == "LRU-random")
 	{
 		for(auto it = content_LRU.begin() ; it != content_LRU.end() ; ++it)
 		{
@@ -190,6 +210,18 @@ DataPacket ContentStore::getDataPacket(ContentName name)
 		return DataPacket() ;
 	}
 	else if(cache_strategy == "LRU")
+	{
+		for(auto it = content_LRU.begin() ; it != content_LRU.end() ; ++it)
+		{
+			if(it->getName() == name)
+			{
+				content_LRU.splice(content_LRU.end() , content_LRU , it) ;
+				return *it ;
+			}
+		}
+		return DataPacket() ;
+	}
+	else if(cache_strategy == "LRU-random")
 	{
 		for(auto it = content_LRU.begin() ; it != content_LRU.end() ; ++it)
 		{

@@ -1,4 +1,0 @@
-CSCapacity 200 0
-get f/al 11 disk 1 21
-get f/al 11 disk 1 21
-error:get task error f/al 35
