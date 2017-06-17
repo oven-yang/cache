@@ -25,7 +25,7 @@ void ContentStore::insert(DataPacket data , double cache_priority)
 	content.insert(it , make_pair(data , cache_priority)) ;
 }
 
-string ContentStore::add(DataPacket data , double cache_priority)//LRU LRU-random
+string ContentStore::add(DataPacket data , double cache_priority)
 {
 	if(cache_strategy != "PPDS")
 	{

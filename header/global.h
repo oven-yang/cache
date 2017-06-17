@@ -63,5 +63,6 @@ extern double pref_weight ;
 extern double popu_weight ;
 extern double old_weight  ;
 extern string cache_strategy ;
+extern double min_priority ;
 
 #endif

@@ -372,6 +372,11 @@ void Node::cache(DataPacket data)
 	 */
 	if(cache_strategy == "PPDS")
 	{
+		if(getBasicCachePriority(data.getName()) < min_priority)
+		{
+			log("data droped for too small b_prior") ;
+			return ;
+		}
 		double cache_priority = calculateCachePriority(getBasicCachePriority(data.getName()) , data.getSize()) ;
 		unsigned old_cs_data_size = cs.getDataSize() ;
 		string con = cs.add(data , cache_priority) ;

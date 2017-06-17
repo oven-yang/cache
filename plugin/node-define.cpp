@@ -10,13 +10,16 @@
 #include<utility>
 #include<cstdlib>
 #include<ctime>
+#include<random>
+#include<iomanip>
 
 using namespace std ;
 
 int str_to_int(string str) ;
 
 const int NAME_LENGTH = 2 ;//{1,2} 17576
-static int OPERATION_KIND_NUM  ;//采用 Zipf 分布.(1+2+4+...
+static int OPERATION_KIND_NUM  ;
+static int MAX_NUM ;//采用 Zipf 分布. max max/2 max/3 max/4 ...
 
 class Name
 {
@@ -31,12 +34,12 @@ public :
 	Name& operator++() ;
 } ;
 
-int main(int argc , char *argv[])// ./node-define node-number operation-kind
+int main(int argc , char *argv[])// ./node-define node-number operation-kind MAX_NUM
 {
 	srand(time(0)) ;
-	if(argc != 3)
+	if(argc != 4)
 	{
-		cout<<"parameters must be 3(program name,number of nodes,operation_kind_num)"<<endl ;//node-define 20 x
+		cout<<"parameters must be 4(program name,number of nodes,operation_kind_num,max num)"<<endl ;//node-define 20 x
 		return 0 ;
 	}
 	int node_num = str_to_int(argv[1]) ;
@@ -47,7 +50,12 @@ int main(int argc , char *argv[])// ./node-define node-number operation-kind
 	}
 	if((OPERATION_KIND_NUM = str_to_int(argv[2])) < 2)
 	{
-		cout<<pow(2 , OPERATION_KIND_NUM)-1<<" operation defined, too few, argument 3 should be greater than 1."<<endl ;
+		cout<<"argument 3 should be greater than 1."<<endl ;
+		return 0 ;
+	}
+	if((MAX_NUM = str_to_int(argv[3])) < 1000)
+	{
+		cout<<"argu 4 must >= 1000"<<endl ;
 		return 0 ;
 	}
 
@@ -73,14 +81,13 @@ int main(int argc , char *argv[])// ./node-define node-number operation-kind
 		node_file<<"interface_quantity 20\n" ;
 		node_file<<"fib_capacity 1000\n" ;
 		node_file<<"pit_capacity 1000\n" ;
-		node_file<<"cs_capacity 180\n" ;
+		node_file<<"cs_capacity 52480000\n" ;
 		node_file<<"pref_capacity 1000\n" ;
 		node_file<<"popu_capacity 1000\n" ;
 		node_file<<"capacity "<<numeric_limits<unsigned int>::max()<<"\n" ;
 		node_file.close() ;
 	}
-
-	//define content
+	//define content,将所有允许出现的内容名随机分配到各个节点
 	for(int i = 1 ; i <= node_num ; ++i)
 	{
 		node_file.open("./source/node" + to_string(i) , std::ios::out | std::ios::app) ;
@@ -88,10 +95,18 @@ int main(int argc , char *argv[])// ./node-define node-number operation-kind
 		node_file.close() ;
 	}
 	Name name(vector<int>{1 , 2}) ;
+	random_device rd;
+    mt19937 gen(rd());
+	normal_distribution<> d(524800 , 318400);
 	while(!name.isLast())
 	{
 		node_file.open("./source/node" + to_string(rand()%node_num + 1) , std::ios::out | std::ios::app) ;
-		node_file<<name.toString()<<" "<<rand()%100 + 1<<endl ;
+		double content_size_here = round(d(gen)) ;
+		while(content_size_here <= 0 || content_size_here > numeric_limits<unsigned int>::max())
+		{
+			content_size_here = round(d(gen)) ;
+		}
+		node_file<<name.toString()<<" "<<setprecision(0)<<fixed<<content_size_here<<endl ;
 		node_file.close() ;
 		++name ;
 	}
@@ -122,22 +137,24 @@ int main(int argc , char *argv[])// ./node-define node-number operation-kind
 				}
 			}
 		}
-		opt.push_back(make_pair(str_name , pow(2 , j))) ;
+		opt.push_back(make_pair(str_name , MAX_NUM/(j+1))) ;
 	}
 	vector<int> operation_timer(node_num + 1 , 0) ;
 	while(!opt.empty())
 	{
 		int write_node = rand()%node_num + 1 ;
 		++operation_timer[write_node] ;
-		node_file.open("./source/node" + to_string(write_node) , std::ios::out | std::ios::app) ;
-
 		size_t k = rand()%opt.size() ;
-		node_file<<operation_timer[write_node]<<" "<<opt[k].first<<"\n" ;
-		if(--opt[k].second == 0)
+		if(--opt[k].second < 0)
 		{
 			opt.erase(opt.begin()+k) ;
 		}
-		node_file.close() ;
+		else
+		{
+			node_file.open("./source/node" + to_string(write_node) , std::ios::out | std::ios::app) ;
+			node_file<<operation_timer[write_node]<<" "<<opt[k].first<<"\n" ;
+			node_file.close() ;
+		}
 	}
 
 	return 0 ;

@@ -3,9 +3,17 @@ make
 make init-log-analysis
 make init-node
 rm -f ./source/log/*
+
+minoperation=10000
+maxoperation=20000
+opplus=1000
+minkind=1000
+maxkind=1009
 topologyarr=("CERNET2" "Deltacom" "GtsCe" "Oteglobe")
 nodes=(20 113 149 93)
 strategyarr=("PPDS" "LRU" "no-cache" "LRU-random")
+#strategyarr=("PPDS" "LRU")
+
 i=0
 while [ $i -lt ${#topologyarr[*]} ]
 do
@@ -13,25 +21,27 @@ do
 	while [ $j -lt ${#strategyarr[*]} ]
 	do
         rm -f ./doc/data/${topologyarr[$i]}.topology/${strategyarr[$j]}/*
-        req=10
-        while [ $req -lt 21 ]
-        do    
-            rm -f ./source/backup-log/${topologyarr[$i]}.topology/${strategyarr[$j]}/$req/*
-            req=`expr $req + 1`
+        rm -r ./source/backup-log/${topologyarr[$i]}.topology/${strategyarr[$j]}/*
+        req=$minoperation
+        while [ $req -lt $maxoperation ]
+        do
+            mkdir ./source/backup-log/${topologyarr[$i]}.topology/${strategyarr[$j]}/$req
+            req=`expr $req + $opplus`
         done
 		j=`expr $j + 1`
 	done
 	i=`expr $i + 1`
 done
 echo "old data removed"
+
 i=0
 while [ $i -lt ${#topologyarr[*]} ]
 do
-    req=10
-    while [ $req -lt 21 ]
+    req=$minoperation
+    while [ $req -lt $maxoperation ]
     do
         rm `ls ./source | awk '{if($0~"node[1-9]+") print "./source/"$0}'`
-        ./node-define ${nodes[${i}]} $req
+        ./node-define ${nodes[${i}]} $minkind $req
         j=0
         while [ $j -lt ${#strategyarr[*]} ]
         do
@@ -41,7 +51,7 @@ do
             echo "$req ${topologyarr[${i}]} ${strategyarr[${j}]} finished"
             j=`expr $j + 1`
         done
-        req=`expr $req + 1`
+        req=`expr $req + $opplus`
     done
     i=`expr $i + 1`
 done

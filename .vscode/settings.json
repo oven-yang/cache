@@ -8,6 +8,14 @@
         "initializer_list": "cpp",
         "utility": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "bitset": "cpp",
+        "functional": "cpp",
+        "ratio": "cpp",
+        "iostream": "cpp"
     }
 }
