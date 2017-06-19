@@ -374,7 +374,7 @@ void Node::cache(DataPacket data)
 	{
 		if(getBasicCachePriority(data.getName()) < min_priority)
 		{
-			log("data droped for too small b_prior") ;
+			log("data droped for too small b_prior " + std::to_string(getBasicCachePriority(data.getName()))) ;
 			return ;
 		}
 		double cache_priority = calculateCachePriority(getBasicCachePriority(data.getName()) , data.getSize()) ;
@@ -418,13 +418,17 @@ void Node::updateCachePriority()
 {
 	if(cache_strategy == "PPDS")
 	{
-		for(map<ContentName , double>::iterator it = basic_cache_priority_table.begin() ; it != basic_cache_priority_table.end() ; ++it)
+		for(map<ContentType , double>::iterator it = basic_cache_priority_table.begin() ; it != basic_cache_priority_table.end() ; ++it)
 		{
 			it->second *= old_weight ;
 		}
 		for(PopularityTable::iterator it = popularity_table.begin() ; it != popularity_table.end() ; ++it)
 		{
-			basic_cache_priority_table[it->first] += (1-old_weight)*(popularity_table.getRate(it->first)*popu_weight + preference_table.getRate(it->first)*pref_weight) ;
+			basic_cache_priority_table[it->first] += (1-old_weight)*popularity_table.getRate(it->first)*popu_weight ;
+		}
+		for(PreferenceTable::iterator it = preference_table.begin() ; it != preference_table.end() ; ++it)
+		{
+			basic_cache_priority_table[it->first] += (1-old_weight)*preference_table.getRate(it->first)*pref_weight ;
 		}
 		for(list<pair<DataPacket , double> >::iterator it = cs.content.begin() ; it != cs.content.end() ; ++it)
 		{

@@ -12,6 +12,7 @@
 #include<ctime>
 #include<random>
 #include<iomanip>
+#include <algorithm>
 
 using namespace std ;
 
@@ -31,10 +32,11 @@ public :
 	Name next() ;
 	string toString() ;
 	Name randName() ;
+	Name randName(vector<vector<char> > prefix) ;
 	Name& operator++() ;
 } ;
 
-int main(int argc , char *argv[])// ./node-define node-number operation-kind MAX_NUM
+int main(int argc , char *argv[])// ./node-define node-number data_type_num(26) MAX_NUM(300)
 {
 	srand(time(0)) ;
 	if(argc != 4)
@@ -53,9 +55,9 @@ int main(int argc , char *argv[])// ./node-define node-number operation-kind MAX
 		cout<<"argument 3 should be greater than 1."<<endl ;
 		return 0 ;
 	}
-	if((MAX_NUM = str_to_int(argv[3])) < 1000)
+	if((MAX_NUM = str_to_int(argv[3])) < 1)
 	{
-		cout<<"argu 4 must >= 1000"<<endl ;
+		cout<<"argu 4 must >= 1"<<endl ;
 		return 0 ;
 	}
 
@@ -119,43 +121,68 @@ int main(int argc , char *argv[])// ./node-define node-number operation-kind MAX
 	{
 		node_file.open("./source/node" + to_string(i) , std::ios::out | std::ios::app) ;
 		node_file<<"[operation]\n" ;//timer content_name
+
+		//随机定义节点请求数量，设最多的为[0-MAX_NUM)间的一个随机值。其他的依照zipf分布递减
+		vector<int> num_by_kind(OPERATION_KIND_NUM , -1) ;
+		int max_num = rand()%MAX_NUM ;
+		int op_timer = 0 ;
+		for(int j = 0 ; j < num_by_kind.size() ; ++j)
+		{
+			num_by_kind[j] = max_num/(j+1) ;
+		}
+		shuffle(num_by_kind.begin() , num_by_kind.end() , gen) ;
+		while(!num_by_kind.empty())
+		{
+			int j = rand()%num_by_kind.size() ;
+			while(num_by_kind[j] == 0)
+			{
+				num_by_kind.erase(num_by_kind.begin()+j) ;
+				if(num_by_kind.empty()) break ;
+				j = rand()%num_by_kind.size() ;
+			}
+			--num_by_kind[j] ;
+			node_file<<++op_timer<<" "<<name.randName(vector<vector<char> >{{static_cast<char>('a'+j)}}).toString()<<"\n" ;
+		}
+
 		node_file.close() ;
 	}
-	vector<pair<string , int> > opt ;
-	for(size_t j = 0 ; j < OPERATION_KIND_NUM ; ++j)
-	{
-		string str_name("") ;
-		while(str_name == "")
-		{
-			str_name = name.randName().toString() ;
-			for(vector<pair<string , int> >::iterator it = opt.begin() ; it != opt.end() ; ++it)
-			{
-				if(str_name == it->first)
-				{
-					str_name = "" ;
-					break ;
-				}
-			}
-		}
-		opt.push_back(make_pair(str_name , MAX_NUM/(j+1))) ;
-	}
-	vector<int> operation_timer(node_num + 1 , 0) ;
-	while(!opt.empty())
-	{
-		int write_node = rand()%node_num + 1 ;
-		++operation_timer[write_node] ;
-		size_t k = rand()%opt.size() ;
-		if(--opt[k].second < 0)
-		{
-			opt.erase(opt.begin()+k) ;
-		}
-		else
-		{
-			node_file.open("./source/node" + to_string(write_node) , std::ios::out | std::ios::app) ;
-			node_file<<operation_timer[write_node]<<" "<<opt[k].first<<"\n" ;
-			node_file.close() ;
-		}
-	}
+
+	// vector<pair<string , int> > opt ;
+	// for(int j = 0 ; j < OPERATION_KIND_NUM ; ++j)
+	// {
+	// 	string str_name("") ;
+	// 	while(str_name == "")
+	// 	{
+	// 		str_name = name.randName().toString() ;
+	// 		for(vector<pair<string , int> >::iterator it = opt.begin() ; it != opt.end() ; ++it)
+	// 		{
+	// 			if(str_name == it->first)
+	// 			{
+	// 				str_name = "" ;
+	// 				break ;
+	// 			}
+	// 		}
+	// 	}
+	// 	opt.push_back(make_pair(str_name , MAX_NUM/(j+1))) ;
+	// }
+	// vector<int> operation_timer(node_num + 1 , 0) ;
+	
+	// while(!opt.empty())
+	// {
+	// 	int write_node = rand()%node_num + 1 ;
+	// 	++operation_timer[write_node] ;
+	// 	size_t k = rand()%opt.size() ;
+	// 	if(--opt[k].second < 0)
+	// 	{
+	// 		opt.erase(opt.begin()+k) ;
+	// 	}
+	// 	else
+	// 	{
+	// 		node_file.open("./source/node" + to_string(write_node) , std::ios::out | std::ios::app) ;
+	// 		node_file<<operation_timer[write_node]<<" "<<opt[k].first<<"\n" ;
+	// 		node_file.close() ;
+	// 	}
+	// }
 
 	return 0 ;
 }
@@ -227,11 +254,23 @@ string Name::toString()
 Name Name::randName()
 {
 	Name rand_name(*this) ;
-	for(vector<vector<char> >::iterator i = name.begin() ; i != name.end() ; ++i)
+	for(vector<vector<char> >::iterator i = rand_name.name.begin() ; i != rand_name.name.end() ; ++i)
 	{
 		for(vector<char>::iterator j = i->begin() ; j != i->end() ; ++j)
 		{
 			*j = static_cast<char>('a'+rand()%26) ;
+		}
+	}
+	return rand_name ;
+}
+Name Name::randName(vector<vector<char> >  prefix)
+{
+	Name rand_name(*this) ;
+	for(size_t i = 0 ; i != rand_name.name.size() ; ++i)
+	{
+		for(size_t j = 0 ; j !=  rand_name.name[i].size() ; ++j)
+		{
+			rand_name.name[i][j] = (prefix.size() > i && prefix[i].size() > j ? prefix[i][j] : static_cast<char>('a'+rand()%26)) ;
 		}
 	}
 	return rand_name ;

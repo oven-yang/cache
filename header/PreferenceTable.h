@@ -14,6 +14,7 @@ private :
     unsigned sum ;
     unsigned capacity ;
 public :
+    typedef map<ContentType , unsigned>::iterator iterator ;
     PreferenceTable() ;
     PreferenceTable(unsigned capacity) ;
     unsigned getQuantity(ContentName name) ;
@@ -21,6 +22,8 @@ public :
     unsigned updateQuantity(ContentName name) ;
     bool setCapacity(unsigned new_capacity) ;
     void clear() ;
+    iterator begin() { return send_table.begin() ; }
+    iterator end() { return send_table.end() ; }
 } ;
 
 #endif

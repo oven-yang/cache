@@ -12,14 +12,7 @@ PopularityTable::PopularityTable(unsigned capacity) : capacity(capacity) , sum(0
 
 unsigned PopularityTable::getQuantity(ContentName name)
 {
-    if(receive_table.count(name) == 1)
-    {
-        return receive_table[name] ;
-    }
-    else
-    {
-        return 0 ;
-    }
+    return ((receive_table.count(name.getContentType()) == 1) ? receive_table[name.getContentType()] : 0) ;
 }
 
 double PopularityTable::getRate(ContentName name)
@@ -29,7 +22,8 @@ double PopularityTable::getRate(ContentName name)
 
 unsigned PopularityTable::updateQuantity(ContentName name)
 {
-    if(receive_table.count(name) == 0)
+    // return ((receive_table.count(name.getContentType()) == 0 && receive_table.size() == capacity) ? 0 : (++receive_table[name.getContentType() , sum)]) ;
+    if(receive_table.count(name.getContentType()) == 0)
     {
         if(receive_table.size() == capacity)
         {
@@ -37,15 +31,16 @@ unsigned PopularityTable::updateQuantity(ContentName name)
         }
         else
         {
-            receive_table[name] = 1 ;
+            receive_table[name.getContentType()] = 1 ;
         }
     }
     else
     {
-        ++receive_table[name] ;
+        ++receive_table[name.getContentType()] ;
     }
     ++sum ;
-    return receive_table[name] ;
+    return receive_table[name.getContentType()] ;
+
 }
 
 bool PopularityTable::setCapacity(unsigned new_capacity)

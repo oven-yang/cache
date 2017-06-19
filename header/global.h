@@ -25,14 +25,15 @@ enum InterfaceState{closed , open , linked , transmitting} ;
 enum PacketType{InterestPacketType , DataPacketType} ;
 
 //内容分类
-enum ContentType{FileType , VideoType , AudioType , UndefinedType} ;
-
+// enum ContentType{FileType , VideoType , AudioType , UndefinedType} ;
+typedef string ContentType ;
 
 /********************************************************************************
  ************************   function definition   *******************************
  ********************************************************************************/
 
 string int_to_str(unsigned num) ;
+string double_to_str(double) ;
 
 unsigned str_to_int(string str) ;
 
@@ -64,5 +65,6 @@ extern double popu_weight ;
 extern double old_weight  ;
 extern string cache_strategy ;
 extern double min_priority ;
+const int content_type_prefix_len = 1 ;
 
 #endif

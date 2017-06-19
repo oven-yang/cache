@@ -72,7 +72,7 @@ private :
 
 	list<ContentName> cs_abstract ;
 
-	map<ContentName , double> basic_cache_priority_table ;
+	map<ContentType , double> basic_cache_priority_table ;
 	PopularityTable popularity_table ;
 	PreferenceTable preference_table ;
 	
@@ -84,7 +84,7 @@ private :
 
 	double getBasicCachePriority(ContentName name)
 	{
-		return basic_cache_priority_table.count(name) == 1 ? basic_cache_priority_table[name] : 0 ;
+		return basic_cache_priority_table.count(name.getContentType()) == 1 ? basic_cache_priority_table[name.getContentType()] : 0 ;
 	}
 
 	unsigned getDegree() ;

@@ -2,18 +2,10 @@
 
 PreferenceTable::PreferenceTable() : capacity(PREFERENCE_DEFAULT_CAPACITY) , sum(0)
 {
-    send_table[FileType] = 0 ;
-    send_table[VideoType] = 0 ;
-    send_table[AudioType] = 0 ;
-    send_table[UndefinedType] = 0 ;
 }
 
 PreferenceTable::PreferenceTable(unsigned capacity) : capacity(capacity) , sum(0)
 {
-    send_table[FileType] = 0 ;
-    send_table[VideoType] = 0 ;
-    send_table[AudioType] = 0 ;
-    send_table[UndefinedType] = 0 ;
 }
 
 unsigned PreferenceTable::getQuantity(ContentName name)

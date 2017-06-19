@@ -13,11 +13,11 @@ using std::endl ;
 
 timer global_clock = 0 ;
 timer update_circle = 20 ;//缓存更新周期
-double pref_weight = 0.2 ;
-double popu_weight = 0.8 ;
-double old_weight = 0.5 ;
+double pref_weight = 0.5 ;
+double popu_weight = 0.5 ;
+double old_weight = 0.75 ;
 string cache_strategy("not-defined") ;
-double min_priority = 0 ;
+double min_priority = pref_weight/1000 ;
 
 //functions
 string int_to_str(unsigned num)
@@ -65,21 +65,21 @@ double calculateCachePriority(double basic_cache_priority , unsigned size)
 {
 	//i do not want this code.
 	//and i think it will cause bad performance.
-	// double size_cal , h_cs = 0.01 ;
-	// double cs_l = 1<<10 , cs_h = 1<<20 ;
-	// if(size >= cs_h)
-	// {
-	// 	size_cal = h_cs ;
-	// }
-	// else if(size <= cs_l)
-	// {
-	// 	size_cal = 1 ;
-	// }
-	// else
-	// {
-	// 	size_cal = (cs_h - h_cs*cs_l - (1-h_cs)*size)/(cs_h - cs_l) ;//wtf
-	// }
-	// return size_cal ;
+	double size_cal , h_cs = 0.01 ;
+	double cs_l = 1<<10 , cs_h = 1<<20 ;
+	if(size >= cs_h)
+	{
+		size_cal = h_cs ;
+	}
+	else if(size <= cs_l)
+	{
+		size_cal = 1 ;
+	}
+	else
+	{
+		size_cal = (cs_h - h_cs*cs_l - (1-h_cs)*size)/(cs_h - cs_l) ;//wtf
+	}
+	return basic_cache_priority*size_cal ;
 	//remove above if you can
 
 	// this is mine.

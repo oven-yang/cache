@@ -43,6 +43,8 @@ string read_data(ifstream& , Node*) ;
 string read_operation(ifstream& , Node*) ;
 void init_log(vector<Node*>&) ;
 
+int operatoin_sum_ = 0 ;
+
 void print() ;
 
 int main(int argc , char *argv[])//./cache topology(CERNET2/Deltacom/GtsCe/Oteglobe) cache-strategy("PPDS LRU no-cache LRU-random")
@@ -307,6 +309,7 @@ string read_data(ifstream& file , Node* node)
 
 string read_operation(ifstream& file , Node* node)
 {
+	int cnt(0) ;
 	unsigned val ;
 	string str ;
 	while(file>>val>>str)
@@ -315,7 +318,13 @@ string read_operation(ifstream& file , Node* node)
 		{
 			log(node->getName() + "init a task " + str + "(" + int_to_str(val) + ") faild") ;
 		}
+		else
+		{
+			++cnt ;
+		}
 	}
+	log(node->getName() , "operatoin " + int_to_str(cnt)) ;
+	operatoin_sum_ += cnt ;
 	return "" ;
 }
 
@@ -325,6 +334,7 @@ void init_log(vector<Node*>& node)
 	{
 		log((*it)->getName() , "CSCapacity " + int_to_str((*it)->getCSCapacity())) ;
 	}
+	log("operation-sum " + int_to_str(operatoin_sum_)) ;
 }
 
 void print()

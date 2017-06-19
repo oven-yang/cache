@@ -40,20 +40,5 @@ string ContentName::getStrName() const
 
 ContentType ContentName::getContentType()//此处实现不合理,扩展性差,可以定义一个全局map常量.
 {
-	for(vector<string>::size_type i = 0 ; i < name.size() ; ++i)
-	{
-		if(name[i] == video_type_key)
-		{
-			return VideoType ;
-		}
-		else if(name[i] == file_type_key)
-		{
-			return FileType ;
-		}
-		else if(name[i] == audio_type_key)
-		{
-			return AudioType ;
-		}
-	}
-	return UndefinedType ;
+	return name[0] ;
 }

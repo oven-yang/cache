@@ -10,11 +10,11 @@ using std::map ;
 class PopularityTable
 {
 private :
-    map<ContentName , unsigned> receive_table ;
+    map<ContentType , unsigned> receive_table ;
     unsigned sum ;
     unsigned capacity ;
 public :
-    typedef map<ContentName , unsigned>::iterator iterator ;
+    typedef map<ContentType , unsigned>::iterator iterator ;
     PopularityTable() ;
     PopularityTable(unsigned capacity) ;
     unsigned getQuantity(ContentName name) ;
