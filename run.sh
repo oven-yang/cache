@@ -1,18 +1,20 @@
 #!/bin/bash
 make
-make init-log-analysis
-make init-node
+make log-analysis
+make node-define
 rm -f ./source/log/*
 
-minoperation=10000
-maxoperation=20000
-opplus=1000
-minkind=1000
-maxkind=1009
-topologyarr=("CERNET2" "Deltacom" "GtsCe" "Oteglobe")
-nodes=(20 113 149 93)
+minoperation=300
+maxoperation=500
+opplus=50
+minkind=26
+maxkind=26
+# topologyarr=("CERNET2" "Deltacom" "GtsCe" "Oteglobe")
+# nodes=(20 113 149 93)
+topologyarr=("Deltacom")
+nodes=(113)
 strategyarr=("PPDS" "LRU" "no-cache" "LRU-random")
-#strategyarr=("PPDS" "LRU")
+# strategyarr=("no-cache")
 
 i=0
 while [ $i -lt ${#topologyarr[*]} ]
@@ -22,8 +24,9 @@ do
 	do
         rm -f ./doc/data/${topologyarr[$i]}.topology/${strategyarr[$j]}/*
         rm -r ./source/backup-log/${topologyarr[$i]}.topology/${strategyarr[$j]}/*
+        rm source/log/*
         req=$minoperation
-        while [ $req -lt $maxoperation ]
+        while [ $req -le $maxoperation ]
         do
             mkdir ./source/backup-log/${topologyarr[$i]}.topology/${strategyarr[$j]}/$req
             req=`expr $req + $opplus`
@@ -38,7 +41,7 @@ i=0
 while [ $i -lt ${#topologyarr[*]} ]
 do
     req=$minoperation
-    while [ $req -lt $maxoperation ]
+    while [ $req -le $maxoperation ]
     do
         rm `ls ./source | awk '{if($0~"node[1-9]+") print "./source/"$0}'`
         ./node-define ${nodes[${i}]} $minkind $req
