@@ -60,7 +60,7 @@ private :
 	//get_task_record记录本节点get_task对内容content已经发出的未被满足的请求的数量
 	//初始为空，当发出请求之后将,将请求的内容名对应值加一
 	//当节点要发出一个内容时，检查是否要向0接口发出，若是，则将get_task_record中对应内容名删除，
-	//并答应对应若干条get task已满足的日志
+	//并打印对应若干条get task已满足的日志
 	map<ContentName , int> get_task_record ;
 
 	RoutingTable routing_table ;//need initialize

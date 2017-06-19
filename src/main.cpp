@@ -14,6 +14,7 @@
 #include<list>
 #include<vector>
 #include<sstream>
+#include<limits>
 #include"../header/ContentName.h"
 #include"../header/ContentStore.h"
 #include"../header/InterestPacket.h"
@@ -25,7 +26,7 @@
 using namespace std ;
 
 const string NODES_DEF_FILE("./source/node-define/nodes") ;
-const int INFINITY = 1000 ;//INFINITY表示节点间的距离为无穷大.
+const int INFINITY = 1000000 ;//INFINITY表示节点间的距离为无穷大.
 
 static string LINK_FILE ;
 static int NODE_NUM ;
@@ -169,8 +170,9 @@ void init()
 	string node_a , node_b ;
 	for( ; link_file>>node_a>>node_b && !node_a.empty() && !node_b.empty() ; ++line)
 	{
+		//确定node_a和node_b在node_list中对应的节点，保存在it_a和it_b中
 		size_t it_a(node_list.size()) , it_b(node_list.size()) ;
-		for(size_t it(0) ; it != node_list.size() ; ++it)
+		for(size_t it(0) ; it != node_list.size() && (it_a == node_list.size() || it_b == node_list.size()) ; ++it)
 		{
 			if(node_list[it]->name == node_a)
 			{
@@ -181,6 +183,7 @@ void init()
 				it_b = it ;
 			}
 		}
+
 		if(it_a == node_list.size() || it_b == node_list.size())
 		{
 			throw runtime_error("ERROR:file " + LINK_FILE + ", line " + int_to_str(line) + ":cannot find the  node\n") ;
@@ -212,9 +215,9 @@ void init()
 	//初始化各个节点的路由表,假设INFINITY表示节点间的距离为无穷大.利用Floyd算法
 	{
 		typedef vector<vector<int> > W ;
-		//path[i][j]表示节点node_list[i]到节点node_list[j]的下一跳为node_list[patj[i][j]]
+		//path[i][j]表示节点node_list[i]到节点node_list[j]的下一跳为node_list[path[i][j]]
 		W path(NODE_NUM , vector<int>(NODE_NUM , NODE_NUM)) ;
-		W *dist = new W(node_links) ;
+		W dist(node_links) ;
 		for(size_t i = 0 ; i < NODE_NUM ; ++i)
 		{
 			for(size_t j = 0 ; j < NODE_NUM ; ++j)
@@ -228,9 +231,9 @@ void init()
 			{
 				for(size_t j = 0 ; j < NODE_NUM ; ++j)
 				{
-					if((*dist)[i][k] + (*dist)[k][j] < (*dist)[i][j])
+					if(dist[i][k] + dist[k][j] < dist[i][j])
 					{
-						(*dist)[i][j] = (*dist)[i][k] + (*dist)[k][j] ;
+						dist[i][j] = dist[i][k] + dist[k][j] ;
 						path[i][j] = path[i][k] ;
 					}
 				}
@@ -244,7 +247,7 @@ void init()
 				{
 					continue ;
 				}
-				if((*dist)[i][j] >= INFINITY)
+				if(dist[i][j] >= INFINITY)
 				{
 					//cout<<node_list[i].getName() + " to " + node_list[j].getName() + " is infinity.\n" ;
 					continue ;
@@ -262,11 +265,11 @@ void init()
 				}
 				// Interface *interface = node_list[i].getLinkInterface(&node_list[j]) ;
 				Interface *interface ;
-// 				size_t k = j ;
-// 				while(!node_list[i].isLinked(&node_list[k]))
-// 				{
-// 					k = path[i][k] ;
-// 				}
+				// size_t k = j ;
+				// while(!node_list[i].isLinked(&node_list[k]))
+				// {
+				// 	k = path[i][k] ;
+				// }
 				interface = node_list[i]->getLinkInterface(node_list[path[i][j]]) ;
 				for(map<ContentName,unsigned>::iterator it = node_list[j]->data_table.begin() ; it != node_list[j]->data_table.end() ; ++it)
 				{

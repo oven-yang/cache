@@ -2,26 +2,40 @@
 #include<fstream>
 #include<string>
 #include<limits>
+#include<sstream>
 
 using namespace std ;
 
 static int NODE_NUM ;
 
-static string request_kind ;
+static int request_quantity = 0 ;
 
 bool write(double , string) ;
 
-int main(int argc , char* argv[])// ./log-analysis request-kind topology(CERNET2/Deltacom/GtsCe/Oteglobe) cache-strategy(PPDS/LRU/no-cache/LRU-random)
+int str_to_int(string str)
+{
+    istringstream stream(str);
+    int num ;
+    stream>>num ;
+    return num ;
+}
+
+int main(int argc , char* argv[])// ./log-analysis request-kind request-max topology(CERNET2/Deltacom/GtsCe/Oteglobe) cache-strategy(PPDS/LRU/no-cache/LRU-random)
 {
 
-	if(argc != 4)
+	if(argc != 5)
 	{
 		cout<<"log-analysis:para error"<<endl ;
 		return 0 ;
 	}
-	request_kind = argv[1] ;
+	int request_kind = str_to_int(argv[1]) ;
+	int request_max = str_to_int(argv[2]) ;
+	while(request_kind > 0)
+	{
+		request_quantity += request_max/request_kind ;
+	}
 
-	string topology = argv[2] ;
+	string topology = argv[3] ;
 	if(topology == "CERNET2")
 	{
 		NODE_NUM = 20 ;
@@ -44,7 +58,7 @@ int main(int argc , char* argv[])// ./log-analysis request-kind topology(CERNET2
 		return 0 ;
 	}
 
-	string cache_strategy = argv[3] ;
+	string cache_strategy = argv[4] ;
 	if(cache_strategy != "PPDS" && cache_strategy != "LRU" && cache_strategy != "no-cache" && cache_strategy != "LRU-random")
 	{
 		cout<<"log-analysis:para 4(cache strategy) wrong. only PPDS/LRU/no-cache/LRU-random is supported"<<endl ;
@@ -142,7 +156,7 @@ bool write(double val , string file)
 		cout<<file<<" open failed."<<endl ;
 		return false ;
 	}
-	record<<request_kind<<" "<<val<<endl ;
+	record<<request_quantity<<" "<<val<<endl ;
 	record.close() ;
 	return true ;
 }

@@ -50,10 +50,6 @@ void PendingInterestTable::remove(ContentName name)
 //由哪个接口转发要由调用者(所属节点)决定.
 bool PendingInterestTable::add(ContentName name , Interface interface)
 {
-	if(!isExist(name , interface) && capacity == pit.size())
-	{
-		return false ;
-	}
 	pit[name].insert(interface) ;
 	return true ;
 }

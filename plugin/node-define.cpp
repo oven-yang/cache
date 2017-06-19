@@ -12,7 +12,6 @@
 #include<ctime>
 #include<random>
 #include<iomanip>
-#include <algorithm>
 
 using namespace std ;
 
@@ -81,11 +80,11 @@ int main(int argc , char *argv[])// ./node-define node-number data_type_num(26) 
 		node_file.open("./source/node" + to_string(i) , std::ios::out | std::ios::trunc) ;
 		node_file<<"[property]\n" ;
 		node_file<<"interface_quantity 20\n" ;
-		node_file<<"fib_capacity 1000\n" ;
-		node_file<<"pit_capacity 1000\n" ;
+		node_file<<"fib_capacity 100000\n" ;
+		node_file<<"pit_capacity 100000\n" ;
 		node_file<<"cs_capacity 52480000\n" ;
-		node_file<<"pref_capacity 1000\n" ;
-		node_file<<"popu_capacity 1000\n" ;
+		node_file<<"pref_capacity 100000\n" ;
+		node_file<<"popu_capacity 100000\n" ;
 		node_file<<"capacity "<<numeric_limits<unsigned int>::max()<<"\n" ;
 		node_file.close() ;
 	}

@@ -71,3 +71,7 @@ node-define :
 .PHONY : log-analysis
 log-analysis :
 	g++ -g -std=c++11 plugin/log-analysis.cpp -o log-analysis
+
+.PHONY : get-check
+get-check :
+	g++ -g -std=c++11 plugin/get-check.cpp -o get-check

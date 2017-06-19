@@ -192,7 +192,7 @@ bool Node::sendPacket(DataPacket data_packet , set<Interface> interfaces)
 			map<ContentName , int>::iterator it = get_task_record.find(data_packet.getName()) ;
 			if(it == get_task_record.end())
 			{
-				log(this->name , "error:get_task " + data_packet.getName().getStrName() + " not exist") ;
+				log(this->name , "error get-task " + data_packet.getName().getStrName() + " not exist") ;
 				con = false ;
 			}
 			else
@@ -212,6 +212,10 @@ bool Node::sendPacket(DataPacket data_packet , set<Interface> interfaces)
 				if(it->first == *interface && it->first.getState() == linked && it->second != this)
 				{
 					it->second->addTask(data_packet , this) ;
+
+					// send content content-name node-name
+					// if(data_packet.getName().getStrName() == "g/jw")
+					// 	log("send content " + data_packet.getName().getStrName() + " " + it->second->name) ;
 					break ;
 				}
 				else
@@ -234,6 +238,11 @@ bool Node::sendPacket(InterestPacket interest_packet , Interface interface)
 		if(it->first == interface && it->first.getState() == linked && it->second != this)
 		{
 			it->second->addTask(interest_packet , this) ;
+			// if(interest_packet.getName().getStrName() == "g/jw")
+			// {
+			// 	//send interest packet-name node-name
+			// 	log(this->name , "send interest " + interest_packet.getName().getStrName() + " " + it->second->name) ;
+			// }
 			break ;
 		}
 		else
@@ -261,12 +270,17 @@ bool Node::receivePacket(DataPacket data_packet , Node* sender)
 	}
 	if(flag == false)
 	{
+		log(name , "error content " + data_packet.getName().getStrName() + " from " + sender->name  + " droped for connection") ;
 		return false ;
 	}
 	if(pit.isExist(packet_name))
 	{
 		addTask(data_packet , pit.getInterfaces(packet_name)) ;
 		pit.remove(packet_name) ;
+	}
+	else
+	{
+		log(name , "error pit " + data_packet.getName().getStrName() + " not exists from " + sender->name) ;
 	}
 	if(data_table.count(packet_name) == 0)
 	{
@@ -290,6 +304,7 @@ bool Node::receivePacket(InterestPacket interest_packet , Node* sender)
 	}
 	if(flag == false)
 	{
+		log(name , "error interest " + interest_packet.getName().getStrName() + " from " + sender->name  + " droped for connection") ;
 		return false ;
 	}
 
@@ -303,6 +318,12 @@ bool Node::receivePacket(InterestPacket interest_packet , Node* sender)
 		{
 			popularity_table.updateQuantity(interest_packet.getName()) ;
 		}
+	}
+	
+	if(interface.getId() == 0)
+	{
+		map<ContentName , int>::iterator it = get_task_record.find(interest_packet.getName()) ;
+		(it == get_task_record.end()) ? (get_task_record[interest_packet.getName()] = 1) : (++(it->second)) ;
 	}
 
 	if(data_table.count(interest_packet.getName()))//节点本身存储了此内容
@@ -321,7 +342,10 @@ bool Node::receivePacket(InterestPacket interest_packet , Node* sender)
 	}
 	else if(!pit.isExist(interest_packet.getName()))//PIT中不存在此请求
 	{
-		pit.add(interest_packet.getName() , interface) ;
+		if(pit.add(interest_packet.getName() , interface) == false)
+		{
+			log(this->name , "error pit fulled " + interest_packet.getName().getStrName() + " droped") ;
+		}
 		Interface* forward_interface = getForwardInterface(interest_packet.getName()) ;
 		if(forward_interface != nullptr)
 		{
@@ -329,7 +353,8 @@ bool Node::receivePacket(InterestPacket interest_packet , Node* sender)
 		}
 		else
 		{
-			log(name , "routing error:cannot forword \"" + interest_packet.getName().getStrName() + "\"") ;
+			log(name , " error routing cannot forword " + interest_packet.getName().getStrName()) ;
+			return false ;
 		}
 	}
 	else if(!pit.isExist(interest_packet.getName() , interface))
@@ -349,12 +374,6 @@ void Node::work()//执行一次此函数耗费一个单位时间
 	while(!get_task_queue.empty() && global_clock >= get_task_queue.front().first)
 	{
 		addTask(InterestPacket(get_task_queue.front().second) , this) ;
-
-		//下面的语句依赖于map<ContentName , int>将value值默认设为0，
-		//当这点我并不确定，可能出现问题，用它下面的那两条语句更加保险。
-		//++get_task_record[get_task_queue.front().second] ;
-		map<ContentName , int>::iterator it = get_task_record.find(get_task_queue.front().second) ;
-		it == get_task_record.end() ? (get_task_record[get_task_queue.front().second] = 1) : (++(it->second)) ;
 		get_task_queue.pop() ;
 	}
 	this->executeTask() ;
