@@ -33,6 +33,7 @@ int main(int argc , char* argv[])// ./log-analysis request-kind request-max topo
 	while(request_kind > 0)
 	{
 		request_quantity += request_max/request_kind ;
+		--request_kind ;
 	}
 
 	string topology = argv[3] ;
